@@ -1,0 +1,58 @@
+format: jb-book
+root: docs/index
+parts:
+- caption: Vorkurs
+  numbered: true
+  chapters:
+  - file: docs/01_Python
+  - file: docs/02_Pythons
+  - file: docs/01_Mathe
+  - file: docs/01_getting_started
+  - file: docs/01_python_by_example
+  - file: docs/01_Einführung_in_DSV_&_Python
+  
+  - file: docs/01_learn_more
+- caption: Einführung
+  numbered: true
+  chapters:
+  - file: docs/01_DSP_Lecture
+  - file: docs/01_Einfuehrung
+  - file: docs/02_Einfuehrung
+  - file: docs/einfuehrung_02_zusammenfassung
+  - file: docs/dsvvrl1
+- caption: Zeitdiskrete Signale
+  numbered: true
+  chapters:
+  - file: docs/03_Zeitdiskret
+  - file: docs/03_Systeme_Sensorik_Diskret
+- caption: Elementare Signale
+  numbered: true
+  chapters:
+  - file: docs/03_Elementare_Signale
+  - file: docs/ElementareSignale
+- caption: Filter
+  numbered: true
+  chapters:
+  - file: docs/04_Filter
+- caption: Stochastische Signale
+  numbered: true
+  chapters:
+  - file: docs/05_Stochastisch
+- caption: Sensorik
+  numbered: true
+  chapters:
+  - file: docs/_Sensorik
+- caption: Spektrogramm
+  numbered: true
+  chapters:
+  - file: docs/06_Spektrogramm
+  - file: docs/06_DSV_Teil_II
+- caption: FFT
+  numbered: true
+  chapters:
+  - file: docs/08_FFT  
+  - file: docs/Fouriertransformation
+- caption: Deep Learning für Signalverarbeitung
+  numbered: true
+  chapters:
+  - file: docs/07_DL4SV

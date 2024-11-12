@@ -1,0 +1,41 @@
+format: jb-book
+root: docs/index
+parts:
+- caption: Vorkurs
+  numbered: true
+  chapters:
+  - file: docs/01_Python
+  - file: docs/02_Python
+  - file: docs/01_Mathe
+  - file: docs/01_getting_started
+  - file: docs/01_python_by_example
+  - file: docs/01_learn_more
+  - file: docs/01_Einfuehrung
+- caption: Einführung1
+  numbered: true
+  chapters:
+  - file: docs/02_Einfuehrung
+- caption: Zeitdiskrete Signale
+  numbered: true
+  chapters:
+  - file: docs/03_Zeitdiskret
+- caption: Filter
+  numbered: true
+  chapters:
+  - file: docs/04_Filter
+- caption: Stochastische Signale
+  numbered: true
+  chapters:
+  - file: docs/05_Stochastisch
+- caption: Spektrogramm
+  numbered: true
+  chapters:
+  - file: docs/06_Spektrogramm
+- caption: Deep Learning für Signalverarbeitung
+  numbered: true
+  chapters:
+  - file: docs/07_DL4SV
+- caption: Einführung2
+  numbered: true
+  chapters:
+  - file: docs/01_Einfuehrung
