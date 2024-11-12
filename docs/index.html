@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Digitale Signalverarbeitung &#8212; Digitale Signalverarbeitung</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Mathematische Vorbereitung" href="01_Mathe.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/CoverImage.JPG" class="logo__image only-light" alt="Digitale Signalverarbeitung - Home"/>
+    <script>document.write(`<img src="../_static/CoverImage.JPG" class="logo__image only-dark" alt="Digitale Signalverarbeitung - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Mathe.html">1. Mathematische Vorbereitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">3. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">4. Signale und Signalverarbeitung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">7. Learn More</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">8. Inhalt der Vorlesung:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">14. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">15. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">16. Digitale Signalverarbeitung - Einführung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">18. DSV Vorlesung 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">19. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">20. Systeme</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">23. Was ist ein Elementarsignal?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">35. Elementare Signale</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">37. Filter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">38. stochastische Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">39. 2. Sensorik und Zeitdiskrete Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">40. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">41. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">42. FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">43. Fourier - Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">60. Digitale Signalverarbeitung</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Digitale Signalverarbeitung</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt-der-vorlesung">Inhalt der Vorlesung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organisatorisches">Organisatorisches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontakt">Kontakt:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moodle-link">Moodle Link:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-vorlesung">Online Vorlesung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literaturliste">Literaturliste:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ablauf-und-modulbewertung">Ablauf und Modulbewertung:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="digitale-signalverarbeitung">
+<h1>Digitale Signalverarbeitung<a class="headerlink" href="#digitale-signalverarbeitung" title="Permalink to this heading">#</a></h1>
+<p>Das ist ein Skript zur Vorlesung Digitale Signalverarbeitung mit Beispielen in Python für THM-Informatik Studierende. Die Vorlesung wird jedes Semester von <a class="reference external" href="https://www.thm.de/mni/seyed-eghbal-ghobadi">Prof. Dr.-Ing. Seyed Eghbal Ghobadi</a> und <a class="reference external" href="https://www.thm.de/mni/nina-rudigkeit">Prof. Dr.-Ing. Nina Rudigkeit</a> gehalten.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Das Vorlesungsskript hier ist kein Lehrbuch. Lehrbücher sind in der Literaturliste aufgeführt.
+Die Beschreibungen und die Beispiele sind daher im Allgemeinen nur mit den Erläuterungen während der Vorlesung und entsprechenden eigenen Notizen verständlich.</p>
+</div>
+<!-- #region -->
+<section id="inhalt-der-vorlesung">
+<h2>Inhalt der Vorlesung:<a class="headerlink" href="#inhalt-der-vorlesung" title="Permalink to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Vorkurs
+        - Mathematische Vorbereitung 
+        - Python
+2. Einführung
+        - Motivation Demo: Wozu Signalverarbeitung?  
+        - Grundbegriffe der Signalverarbeitung
+        - Anwendungsbeispiele
+        - lineare, zeitinvariante Übertragungssysteme (LZI)
+        - Klassifizierung von Signalen 
+        - Impulsantwort
+3. Zeitdiskrete Signale
+        - Faltung von Signalen; 
+        - Diskrete Fourier-Transformation (DFT)
+        - Signalabtastung; Abtasttheorem und Aliasing; Leakage-Effekt, 
+        - Fast Fourier Transformation (FFT)
+        - Frequenzanalyse mittels DFT
+4. Filter
+        - nicht-rekursive und rekursive digitale Filter, 
+        - FIR- und IIR-Systeme; 
+        - Filteranalyse; Filtersynthese
+5.  Stochastische Signale 
+        - Grundbegriffe der Wahrscheinlichkeitsrechnung
+        - Erwartungswert, Momente und Varianz
+        - Korrelation
+6. Spektrogramm (?)
+7. Deep Learning für Signalverarbeitung (?)
+</pre></div>
+</div>
+<!-- #endregion -->
+</section>
+<section id="organisatorisches">
+<h2>Organisatorisches<a class="headerlink" href="#organisatorisches" title="Permalink to this heading">#</a></h2>
+<section id="kontakt">
+<h3>Kontakt:<a class="headerlink" href="#kontakt" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Name: Prof. Dr. Nina Rudigkeit</p></li>
+<li><p>Sprechstunde: nach Vereinbarung</p></li>
+<li><p>E-Mail: <a class="reference external" href="mailto:nina&#46;rudigkeit&#37;&#52;&#48;mni&#46;thm&#46;de">nina<span>&#46;</span>rudigkeit<span>&#64;</span>mni<span>&#46;</span>thm<span>&#46;</span>de</a></p></li>
+<li><p>Name: Prof. Dr.-Ing. Seyed Eghbal Ghobadi</p></li>
+<li><p>Sprechstunde: nach Vereinbarung per E-Mail</p></li>
+<li><p>E-Mail: <a class="reference external" href="mailto:seyed&#46;eghbal&#46;ghobadi&#37;&#52;&#48;mni&#46;thm&#46;de">seyed<span>&#46;</span>eghbal<span>&#46;</span>ghobadi<span>&#64;</span>mni<span>&#46;</span>thm<span>&#46;</span>de</a></p></li>
+</ul>
+</section>
+<section id="moodle-link">
+<h3>Moodle Link:<a class="headerlink" href="#moodle-link" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://moodle.thm.de/course/view.php?id=9454">Materialien zur Vorlesung in Moodle</a></p>
+</section>
+<section id="online-vorlesung">
+<h3>Online Vorlesung<a class="headerlink" href="#online-vorlesung" title="Permalink to this heading">#</a></h3>
+<p>wenn die Vorlesung online gehalten wird, verwenden Sie bitte:</p>
+<p>Coming Soon!</p>
+</section>
+<section id="literaturliste">
+<h3>Literaturliste:<a class="headerlink" href="#literaturliste" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Werner, M.: Digitale Signalverarbeitung mit MATLAB - Grundkurs mit 16 ausführlichen Versuchen. Springer Vieweg. (eBook)</p></li>
+<li><p>Kaminski, S.: Python 3. De Gruyter Studium. (eBook)</p></li>
+<li><p>Rost, M., Wefel, S.: Sensorik für Informatiker. De Gruyter. (eBook)</p></li>
+<li><p>von Grünigen, D.: Digitale Signalverarbeitung - Mit einer Einführung in die kontinuierlichen Signale und Systeme. Hanser Verlag. (eBook)</p></li>
+<li><p>Meyer, M.: Signalverarbeitung - Analoge und digitale Signale,
+Systeme und Filter. Springer Vieweg. (eBook)</p></li>
+<li><p>Meffert, B., Hochmuth, O.: Werkzeuge der Signalverarbeitung - Grundlagen, Anwendungsbeispiele, Übungsaufgaben. Pearson. (eBook)</p></li>
+<li><p>Oppenheim, A. V., Schafer, R. W.: Zeitdiskrete Signalverarbeitung. Oldenburg. (Printexemplar in der Bibliothek, Signatur: elt 940 25)</p></li>
+</ul>
+</section>
+<section id="ablauf-und-modulbewertung">
+<h3>Ablauf und Modulbewertung:<a class="headerlink" href="#ablauf-und-modulbewertung" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>2 SWS Vorlesung</p></li>
+<li><p>2 SWS Übung</p></li>
+<li><p>60 min Übung</p>
+<ul>
+<li><p>Zeit zur Bearbeitung eines Übungsblattes: ≈ 1 Woche (Vor-/Nacharbeit notwendig)</p></li>
+<li><p>Vorführung Musterlösungen nach Deadline für Abgabe</p></li>
+</ul>
+</li>
+<li><p><strong>Bewertung:</strong></p>
+<ul>
+<li><p>Klausur: 100%</p></li>
+<li><p>Übungsmitarbeit 10%
+*Anwesenheit
+*Vorführen Python-Skripte
+*kurze Ausarbeitung</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="01_Mathe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Mathematische Vorbereitung</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt-der-vorlesung">Inhalt der Vorlesung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organisatorisches">Organisatorisches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontakt">Kontakt:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moodle-link">Moodle Link:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-vorlesung">Online Vorlesung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literaturliste">Literaturliste:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ablauf-und-modulbewertung">Ablauf und Modulbewertung:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

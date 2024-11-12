@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>43. Fourier - Transformation &#8212; Digitale Signalverarbeitung</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Fouriertransformation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="60. Digitale Signalverarbeitung" href="07_DL4SV.html" />
+    <link rel="prev" title="42. FFT" href="08_FFT.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/CoverImage.JPG" class="logo__image only-light" alt="Digitale Signalverarbeitung - Home"/>
+    <script>document.write(`<img src="../_static/CoverImage.JPG" class="logo__image only-dark" alt="Digitale Signalverarbeitung - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Mathe.html">1. Mathematische Vorbereitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">3. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">4. Signale und Signalverarbeitung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">7. Learn More</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">8. Inhalt der Vorlesung:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">14. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">15. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">16. Digitale Signalverarbeitung - Einführung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">18. DSV Vorlesung 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">19. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">20. Systeme</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">23. Was ist ein Elementarsignal?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Elementare%20Signale.html">35. Elementare Signale</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">37. Filter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">38. stochastische Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">39. 2. Sensorik und Zeitdiskrete Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">40. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">41. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">42. FFT</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">43. Fourier - Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">60. Digitale Signalverarbeitung</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Fouriertransformation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fourier - Transformation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">43. Fourier - Transformation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vrl-06">43.1. vrl : 06</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">44. Inhalt:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nutzung-der-fourier-reihe">45. Nutzung Der Fourier-Reihe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#art-der-fourier-reihe">46. Art der Fourier – Reihe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-praktisches-beispiel">47. Ein praktisches Beispiel</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koffezienten-berechnen">48. ⦁	Köffezienten Berechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rekapitulation-vereinbarung">49. ⦁	Rekapitulation Vereinbarung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a0-rechnen">50. a0 Rechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ak-rechnen">51. ak Rechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">52. Fourier -Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transformation-ist-eine-erweiterung-der-fourier-reihe-fur-aperiodische-signale-mit">53. ▪ Fourier-Transformation ist eine Erweiterung der Fourier-Reihe für aperiodische Signale mit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zweck-fourier-transformation">54. Zweck Fourier Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-1">55. Beispiel 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-2">56. Beispiel 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transformation">57. Laplace Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">58. lernziele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kontrollfragen">59. kontrollfragen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschreiben-sie-die-rolle-von-fourier-in-der-signalverarbeitung-anhand-eines-beispiels">59.1. Beschreiben Sie die Rolle von Fourier in der Signalverarbeitung anhand eines Beispiels.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schreiben-sie-die-gleichung-der-fourier-reihe-fur-eine-periodische-funktion-in-komplexer-form-auf">59.2. Schreiben Sie die Gleichung der Fourier-Reihe für eine periodische Funktion in komplexer Form auf.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschreiben-sie-den-unterschied-zwischen-fourier-reihe-und-fourier-transformation">59.3. Beschreiben Sie den Unterschied zwischen Fourier-Reihe und Fourier-Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alle-photos-sind-aus-der-vorlesung">59.3.1. alle photos sind aus der Vorlesung</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#judy-abou-rmeh-julian-duchschere">59.3.1.1. judy Abou Rmeh &amp; Julian Duchschere</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">display</span>
+
+
+</pre></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="fourier-transformation">
+<h1><span class="section-number">43. </span>Fourier - Transformation<a class="headerlink" href="#fourier-transformation" title="Permalink to this heading">#</a></h1>
+<section id="vrl-06">
+<h2><span class="section-number">43.1. </span>vrl : 06<a class="headerlink" href="#vrl-06" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="inhalt">
+<h1><span class="section-number">44. </span>Inhalt:<a class="headerlink" href="#inhalt" title="Permalink to this heading">#</a></h1>
+<p>▪ Diskrete Fourier-Transformation</p>
+<p>▪ Grundlagen und Motivation</p>
+<p>▪ Fourier-Reihe</p>
+<p>▪ Fourier-Transformation</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nutzung-der-fourier-reihe">
+<h1><span class="section-number">45. </span>Nutzung Der Fourier-Reihe<a class="headerlink" href="#nutzung-der-fourier-reihe" title="Permalink to this heading">#</a></h1>
+<p>1.Messen der Spannung</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  ZB: wenn man wissen möchte, aus 50 Hz welche Frequenz(sin) hat (Spektum).
+</pre></div>
+</div>
+<p>2.Die Frequenzen filtern</p>
+<p>3.Die Darstellung des Spektrums des Signals</p>
+<p>Wir nehmen den periodische Signale ,weil sie in der Natur sehr auftreten
+die Fourier-Reihe wird verwendet, um Signale in ihre Frequenzkomponenten zu zerlegen und sie zu analysieren.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Prisma_de_Newton.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="jpeg" src="../_images/output_5_0.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="art-der-fourier-reihe">
+<h1><span class="section-number">46. </span>Art der Fourier – Reihe<a class="headerlink" href="#art-der-fourier-reihe" title="Permalink to this heading">#</a></h1>
+<p>⦁	Fourier Zerlegung oder Fourier Analyse</p>
+<p>⦁	Fourier Synthese ,um ursprüngliche Signal zu bilden</p>
+<p>Signal ist eine Funktion</p>
+<p><span class="math notranslate nohighlight">\(x_p\)</span>(t) = <span class="math notranslate nohighlight">\(\frac{a_0}{2}\)</span> +<span class="math notranslate nohighlight">\(\sum_{k=1}^\infty \)</span> a_k * cos(2πf_0t) + a2 * cos(2π2f0t) + a3 * cos(2π3f0t) + …</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ein-praktisches-beispiel">
+<h1><span class="section-number">47. </span>Ein praktisches Beispiel<a class="headerlink" href="#ein-praktisches-beispiel" title="Permalink to this heading">#</a></h1>
+<p>Audio Signal
+Am Anfang ist ein sauber Sinus Signal<br />
+Am Ende hat man andere Frequenzteile</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="koffezienten-berechnen">
+<h1><span class="section-number">48. </span>⦁	Köffezienten Berechnen<a class="headerlink" href="#koffezienten-berechnen" title="Permalink to this heading">#</a></h1>
+<p>Anmerkung : Für Vereinfachung ‘ω’ wird weggelassen</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rekapitulation-vereinbarung">
+<h1><span class="section-number">49. </span>⦁	Rekapitulation Vereinbarung<a class="headerlink" href="#rekapitulation-vereinbarung" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\int_{-\pi}^{\pi}sin(mt)\,dt =0\]</div>
+<p>Periodische Signal kann ich schreiben  als  konstante * die Summe von cos und sin</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a0-rechnen">
+<h1><span class="section-number">50. </span>a0 Rechnen<a class="headerlink" href="#a0-rechnen" title="Permalink to this heading">#</a></h1>
+<p>wie bilden das bestimmte integral der rechten Seite über das Interval[-pi,pi]:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (53).png&#39;</span><span class="p">)</span>
+<span class="c1">#![aus der Vorlesung](Screenshot (53).png)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_15_0.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ak-rechnen">
+<h1><span class="section-number">51. </span>ak Rechnen<a class="headerlink" href="#ak-rechnen" title="Permalink to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#![aus der Vorlesung](C:\Users\LENOVO\Desktop\Fourier Skript\Screenshot (54).png)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (54).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_17_0.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#![aus der Vorlesung](C:\Users\LENOVO\Desktop\Fourier Skript\Screenshot (56).png)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (56).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_18_0.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">52. </span>Fourier -Transformation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fourier-transformation-ist-eine-erweiterung-der-fourier-reihe-fur-aperiodische-signale-mit">
+<h1><span class="section-number">53. </span>▪ Fourier-Transformation ist eine Erweiterung der Fourier-Reihe für aperiodische Signale mit<a class="headerlink" href="#fourier-transformation-ist-eine-erweiterung-der-fourier-reihe-fur-aperiodische-signale-mit" title="Permalink to this heading">#</a></h1>
+<p>unendlicher Periodendauer 𝑇0 → ∞, 𝜔 → 0</p>
+<p>▪ Das Spektrum besteht nicht mehr aus absoluten Amplitudenwerten an diskreten Frequenzen 𝑛𝜔0
+(also Vielfachen der Grundfrequenz), sondern es besteht aus der Amplitudendichte über einer kontinuierlichen Frequenzachse.</p>
+<p>(Gleiches gilt für die Phasen.)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#![aus der Vorlesung](&quot;C:\Users\LENOVO\Desktop\Fourier Skript\Screenshot (57).png&quot;)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (57).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_21_0.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="zweck-fourier-transformation">
+<h1><span class="section-number">54. </span>Zweck Fourier Transformation<a class="headerlink" href="#zweck-fourier-transformation" title="Permalink to this heading">#</a></h1>
+<p>Die Fourier transformation macht die nicht sichtbare Funktion (bestimmte Information ) sichtbar</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#![aus der Vorlesung](&quot;C:\Users\LENOVO\Desktop\Fourier Skript\Screenshot (51).png&quot;)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (51).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_24_0.png" /></p>
+<p>——&gt;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#![aus der Vorlesung](&quot;C:\Users\LENOVO\Desktop\Fourier Skript\Screenshot (52).png&quot;)</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Screenshot (52).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="../_images/output_26_0.png" /></p>
+<p>Fourier Transformation<br />
+log(ab) = log a + log b</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="beispiel-1">
+<h1><span class="section-number">55. </span>Beispiel 1<a class="headerlink" href="#beispiel-1" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple" start="10">
+<li><p>10000 =10^5
+Transformation in anderen Art
+Über log(10.10000)
+= log(10) + log(10000)
+= 1 + 4 = 5</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="beispiel-2">
+<h1><span class="section-number">56. </span>Beispiel 2<a class="headerlink" href="#beispiel-2" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="laplace-transformation">
+<h1><span class="section-number">57. </span>Laplace Transformation<a class="headerlink" href="#laplace-transformation" title="Permalink to this heading">#</a></h1>
+<p>U(t) + Rc Uc(t) + Uc(t)</p>
+<p>—-laplace—&gt;</p>
+<p>U(s) = RcSUc(s) + LS²Uc(s)+Uc(s)</p>
+<p>Hintergrund Warum wir Fourier Transformation überhaupt brauchen?</p>
+<p>Wir möchten etw rechnen (ZB ableiten)</p>
+<p>Durch diese Transformation wir könnten diese Signal von Domän (ZB Zeit Bereich)
+in andere Domän (ZB Frequenz Bereich) verwandel so können wir es einfacher rechnen.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lernziele">
+<h1><span class="section-number">58. </span>lernziele<a class="headerlink" href="#lernziele" title="Permalink to this heading">#</a></h1>
+<p>• Sie verstehen die Anwendung von Fourier in der Signalverarbeitung.</p>
+<p>• Sie wissen, wie periodische Signale durch Fourier-Reihen zerlegt werden können.</p>
+<p>• Sie können die Fourier-Reihe in der komplexen Form beschreiben.</p>
+<p>• Sie können das Prinzip der FourierTransformation nachvollziehen.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kontrollfragen">
+<h1><span class="section-number">59. </span>kontrollfragen<a class="headerlink" href="#kontrollfragen" title="Permalink to this heading">#</a></h1>
+<section id="beschreiben-sie-die-rolle-von-fourier-in-der-signalverarbeitung-anhand-eines-beispiels">
+<h2><span class="section-number">59.1. </span>Beschreiben Sie die Rolle von Fourier in der Signalverarbeitung anhand eines Beispiels.<a class="headerlink" href="#beschreiben-sie-die-rolle-von-fourier-in-der-signalverarbeitung-anhand-eines-beispiels" title="Permalink to this heading">#</a></h2>
+<p>(Audio Signal)</p>
+</section>
+<section id="schreiben-sie-die-gleichung-der-fourier-reihe-fur-eine-periodische-funktion-in-komplexer-form-auf">
+<h2><span class="section-number">59.2. </span>Schreiben Sie die Gleichung der Fourier-Reihe für eine periodische Funktion in komplexer Form auf.<a class="headerlink" href="#schreiben-sie-die-gleichung-der-fourier-reihe-fur-eine-periodische-funktion-in-komplexer-form-auf" title="Permalink to this heading">#</a></h2>
+<p>Die Fourier-Reihe einer periodischen Funktion (f(t)) in komplexer Form zerlegt die Funktion in eine unendliche Summe von harmonischen Schwingungen.</p>
+</section>
+<section id="beschreiben-sie-den-unterschied-zwischen-fourier-reihe-und-fourier-transformation">
+<h2><span class="section-number">59.3. </span>Beschreiben Sie den Unterschied zwischen Fourier-Reihe und Fourier-Transformation<a class="headerlink" href="#beschreiben-sie-den-unterschied-zwischen-fourier-reihe-und-fourier-transformation" title="Permalink to this heading">#</a></h2>
+<p>Fourier Reihe ist Periodisch Darstellung
+Fourier -Transformation ist Apperiodisch Darstellung</p>
+<section id="alle-photos-sind-aus-der-vorlesung">
+<h3><span class="section-number">59.3.1. </span>alle photos sind aus der Vorlesung<a class="headerlink" href="#alle-photos-sind-aus-der-vorlesung" title="Permalink to this heading">#</a></h3>
+<section id="judy-abou-rmeh-julian-duchschere">
+<h4><span class="section-number">59.3.1.1. </span>judy Abou Rmeh &amp; Julian Duchschere<a class="headerlink" href="#judy-abou-rmeh-julian-duchschere" title="Permalink to this heading">#</a></h4>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="08_FFT.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">42. </span>FFT</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_DL4SV.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">60. </span>Digitale Signalverarbeitung</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">43. Fourier - Transformation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vrl-06">43.1. vrl : 06</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">44. Inhalt:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nutzung-der-fourier-reihe">45. Nutzung Der Fourier-Reihe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#art-der-fourier-reihe">46. Art der Fourier – Reihe</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-praktisches-beispiel">47. Ein praktisches Beispiel</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koffezienten-berechnen">48. ⦁	Köffezienten Berechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rekapitulation-vereinbarung">49. ⦁	Rekapitulation Vereinbarung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a0-rechnen">50. a0 Rechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ak-rechnen">51. ak Rechnen</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">52. Fourier -Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-transformation-ist-eine-erweiterung-der-fourier-reihe-fur-aperiodische-signale-mit">53. ▪ Fourier-Transformation ist eine Erweiterung der Fourier-Reihe für aperiodische Signale mit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zweck-fourier-transformation">54. Zweck Fourier Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-1">55. Beispiel 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#beispiel-2">56. Beispiel 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-transformation">57. Laplace Transformation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">58. lernziele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kontrollfragen">59. kontrollfragen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschreiben-sie-die-rolle-von-fourier-in-der-signalverarbeitung-anhand-eines-beispiels">59.1. Beschreiben Sie die Rolle von Fourier in der Signalverarbeitung anhand eines Beispiels.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schreiben-sie-die-gleichung-der-fourier-reihe-fur-eine-periodische-funktion-in-komplexer-form-auf">59.2. Schreiben Sie die Gleichung der Fourier-Reihe für eine periodische Funktion in komplexer Form auf.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beschreiben-sie-den-unterschied-zwischen-fourier-reihe-und-fourier-transformation">59.3. Beschreiben Sie den Unterschied zwischen Fourier-Reihe und Fourier-Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alle-photos-sind-aus-der-vorlesung">59.3.1. alle photos sind aus der Vorlesung</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#judy-abou-rmeh-julian-duchschere">59.3.1.1. judy Abou Rmeh &amp; Julian Duchschere</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
