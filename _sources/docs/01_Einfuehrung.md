@@ -23,7 +23,7 @@
 
 ![Luftfahrt](/_static/lecture_specific/Bilder_fur_Einfuerung/Luftfahrt.png)<br>
 
-<h3><strong><u>Matlab/Simulink</h3></strong></u>
+<h3><strong><u>Matlap/Simulink</h3></strong></u>
 <em>Welche Alternative zu Phyton, um digitale Signale Darzustellen ?</em><br>
 
 <em>MATLAB:</em><br>
