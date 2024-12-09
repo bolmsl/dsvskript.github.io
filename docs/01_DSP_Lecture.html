@@ -1,74 +1,69 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Inhalt der Vorlesung: &#8212; Digitale Signalverarbeitung</title>
+    <title>7. Inhalt der Vorlesung: &#8212; Digitale Signalverarbeitung</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/01_DSP_Lecture';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. Digitale Signalverarbeitung" href="01_Einfuehrung.html" />
-    <link rel="prev" title="7. Learn More" href="01_learn_more.html" />
+    <link rel="next" title="13. Digitale Signalverarbeitung" href="01_Einfuehrung.html" />
+    <link rel="prev" title="6. Learn More" href="01_learn_more.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -160,42 +158,52 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Mathe.html">1. Mathematische Vorbereitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">3. An Introductory Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">4. Signale und Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">1. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">2. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">3. Signale und Signalverarbeitung</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">7. Learn More</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">6. Learn More</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Inhalt der Vorlesung:</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Inhalt der Vorlesung:</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">14. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">15. Digitale Signal Verarbeitung: Einführung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">16. Digitale Signalverarbeitung - Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">13. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">14. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">15. Digitale Signalverarbeitung - Einführung</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">18. DSV Vorlesung 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">17. DSV Vorlesung 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">19. Zeitdiskrete Signale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">20. Systeme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">18. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">19. Systeme</a></li>
 
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">23. Was ist ein Elementarsignal?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">22. Was ist ein Elementarsignal?</a></li>
 
 
 
@@ -207,30 +215,30 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">35. Elementare Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">34. Elementare Signale</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">37. Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">36. Filter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">38. stochastische Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">37. stochastische Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">39. 2. Sensorik und Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">38. 2. Sensorik und Zeitdiskrete Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">40. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">41. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">39. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">40. Digitale Signalverarbeitung - DFT Teil 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">42. FFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">43. Fourier - Transformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">41. FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">42. Fourier - Transformation</a></li>
 
 
 
@@ -250,7 +258,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">60. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">59. Digitale Signalverarbeitung</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="test.html">60. Test Heading</a></li>
 </ul>
 
     </div>
@@ -266,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -275,14 +287,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -376,9 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -399,48 +411,48 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Inhalt der Vorlesung:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">9. Setup</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vorlesung-inhalt-in-einem-demo">9.1. Die Vorlesung Inhalt in einem Demo:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step1-reading-a-file-for-ausio-signals">9.2. Step1: Reading a file for ausio signals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-transforming-audio-frequencies">9.3. Step 2: Transforming Audio Frequencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extracting-features-from-speech">9.4. Step 3: Extracting features from speech</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-recognizing-spoken-words">9.5. Step 4: Recognizing Spoken Words</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-the-recorded-signal">9.5.1. Playing the recorded signal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Inhalt der Vorlesung:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8. Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vorlesung-inhalt-in-einem-demo">8.1. Die Vorlesung Inhalt in einem Demo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step1-reading-a-file-for-ausio-signals">8.2. Step1: Reading a file for ausio signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-transforming-audio-frequencies">8.3. Step 2: Transforming Audio Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extracting-features-from-speech">8.4. Step 3: Extracting features from speech</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-recognizing-spoken-words">8.5. Step 4: Recognizing Spoken Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-the-recorded-signal">8.5.1. Playing the recorded signal</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii1003-digitale-signalverarbeitung">10. II1003– Digitale Signalverarbeitung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">10.1. Inhalt:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-1-einfuhrung">10.1.1. Kapitel 1: Einführung</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-2-xxx">10.1.2. Kapitel 2: xxx</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-3-xxx">10.1.3. Kapitel 3: xxx</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii1003-digitale-signalverarbeitung">9. II1003– Digitale Signalverarbeitung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">9.1. Inhalt:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-1-einfuhrung">9.1.1. Kapitel 1: Einführung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-2-xxx">9.1.2. Kapitel 2: xxx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-3-xxx">9.1.3. Kapitel 3: xxx</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11. Kapitel 1: Einführung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-signalverarbeitung">11.1. 1.1 Wozu Signalverarbeitung?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">11.2. 1.2 Deterministische und stochastische Signale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analoge-versus-digitale-signale">11.3. 1.3 Analoge versus digitale Signale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-d-und-d-a-wandler">11.4. 1.4 A/D- und D/A-Wandler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendungsbeispiele">11.5. 1.5 Anwendungsbeispiele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10. Kapitel 1: Einführung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-signalverarbeitung">10.1. 1.1 Wozu Signalverarbeitung?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">10.2. 1.2 Deterministische und stochastische Signale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analoge-versus-digitale-signale">10.3. 1.3 Analoge versus digitale Signale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-d-und-d-a-wandler">10.4. 1.4 A/D- und D/A-Wandler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendungsbeispiele">10.5. 1.5 Anwendungsbeispiele</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">12. Was ist ein Signal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-gen-in-python">12.1. Signal Gen. in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-beispiel">12.2. Audio Beispiel</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-ubertragen-informationen">12.2.1. • Signale übertragen Informationen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-sind-funktionen-meist-der-zeit">12.2.2. • Signale sind Funktionen, meist der Zeit.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung">12.2.3. • Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">11. Was ist ein Signal?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-gen-in-python">11.1. Signal Gen. in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-beispiel">11.2. Audio Beispiel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-ubertragen-informationen">11.2.1. • Signale übertragen Informationen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-sind-funktionen-meist-der-zeit">11.2.2. • Signale sind Funktionen, meist der Zeit.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung">11.2.3. • Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsv-kapitel-1">13. DSV Kapitel #1</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">13.1. Einführung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.2. Einführung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsv-kapitel-1">12. DSV Kapitel #1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">12.1. Einführung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.2. Einführung</a></li>
 </ul>
 </li>
 </ul>
@@ -453,11 +465,11 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><img alt="" src="docs/CoverImage.jpg" /></p>
 <section id="inhalt-der-vorlesung">
-<h1><span class="section-number">8. </span>Inhalt der Vorlesung:<a class="headerlink" href="#inhalt-der-vorlesung" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Inhalt der Vorlesung:<a class="headerlink" href="#inhalt-der-vorlesung" title="Link to this heading">#</a></h1>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Vorkurs
         - Mathematische Vorbereitung 
         - Python
@@ -506,12 +518,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Frequency index (k)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/53323b31b0c0cac42f50ba790f65d33ddb9755297fde32263a230665ce2715b5.png" src="../_images/53323b31b0c0cac42f50ba790f65d33ddb9755297fde32263a230665ce2715b5.png" />
+<img alt="../_images/ce5a64ff320b34da87cb20ca6b65eaf6cb66deb8da047d40144bbe68ba5ee3fd.png" src="../_images/ce5a64ff320b34da87cb20ca6b65eaf6cb66deb8da047d40144bbe68ba5ee3fd.png" />
 </div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="setup">
-<h1><span class="section-number">9. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -537,7 +549,7 @@ document.write(`
 </div>
 </div>
 <section id="die-vorlesung-inhalt-in-einem-demo">
-<h2><span class="section-number">9.1. </span>Die Vorlesung Inhalt in einem Demo:<a class="headerlink" href="#die-vorlesung-inhalt-in-einem-demo" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>Die Vorlesung Inhalt in einem Demo:<a class="headerlink" href="#die-vorlesung-inhalt-in-einem-demo" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The sound is an analog signal that humans perceive through sensory organs</p></li>
 <li><p>First step: it should be converted from analoge to digital in two steps:</p>
@@ -557,7 +569,7 @@ document.write(`
 <p>#<img alt="" src="docs/Demo.jpg" /></p>
 </section>
 <section id="step1-reading-a-file-for-ausio-signals">
-<h2><span class="section-number">9.2. </span>Step1: Reading a file for ausio signals<a class="headerlink" href="#step1-reading-a-file-for-ausio-signals" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>Step1: Reading a file for ausio signals<a class="headerlink" href="#step1-reading-a-file-for-ausio-signals" title="Link to this heading">#</a></h2>
 <p>SciPy has many methods of performing file operation in Python</p>
 <ul class="simple">
 <li><p>Recording the audio signal</p></li>
@@ -624,7 +636,7 @@ document.write(`
 <p>This is the representation of the sound amplitude of the input file against its duration of play. We have successfully extracted numerical data from an audio (.wav) file.</p>
 </section>
 <section id="step-2-transforming-audio-frequencies">
-<h2><span class="section-number">9.3. </span>Step 2: Transforming Audio Frequencies<a class="headerlink" href="#step-2-transforming-audio-frequencies" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Step 2: Transforming Audio Frequencies<a class="headerlink" href="#step-2-transforming-audio-frequencies" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://towardsdatascience.com/a-step-by-step-guide-to-speech-recognition-and-audio-signal-processing-in-python-136e37236c24">https://towardsdatascience.com/a-step-by-step-guide-to-speech-recognition-and-audio-signal-processing-in-python-136e37236c24</a></p>
 <p>Frequency-Domain Representation: To better understand an audio signal, it is necessary to look at it through a frequency domain. This representation of an audio signal will give us details about the presence of different frequencies in the signal. Fourier Transform is a mathematical concept that can be used in the conversion of a continuous signal from its original time-domain state to a frequency-domain state. We will be using Fourier Transforms (FT) in Python to convert audio signals to a frequency-centric representation.</p>
 <p><strong>Fourier Transforms in Python:</strong> Fourier Transforms is a mathematical concept that can decompose this signal and bring out the individual frequencies. This is vital for understanding all the frequencies that are combined together to form the sound we hear. Fourier Transform (FT) gives all the frequencies present in the signal and also shows the magnitude of each frequency.</p>
@@ -668,7 +680,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <p>With this, we were able to apply Fourier Transforms to the Audio input file and subsequently see a frequency domain (frequency against signal strength) representation of the audio.</p>
 </section>
 <section id="step-3-extracting-features-from-speech">
-<h2><span class="section-number">9.4. </span>Step 3: Extracting features from speech<a class="headerlink" href="#step-3-extracting-features-from-speech" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>Step 3: Extracting features from speech<a class="headerlink" href="#step-3-extracting-features-from-speech" title="Link to this heading">#</a></h2>
 <p>Once the speech is moved from a time-domain signal to a frequency domain signal, the next step is to convert this frequency domain data into a usable feature vector. Before starting this, we have to know about a new concept called <strong>MFCC</strong>.</p>
 <p><a class="reference external" href="https://www.szynalski.com/tone-generator/">Online Tone Generator</a></p>
 <div class="cell docutils container">
@@ -759,7 +771,7 @@ Individual Feature Length = 26
 <p>If we see the two distributions, it is evident that the low frequency and high-frequency sound distributions are separated in the second image.</p>
 </section>
 <section id="step-4-recognizing-spoken-words">
-<h2><span class="section-number">9.5. </span>Step 4: Recognizing Spoken Words<a class="headerlink" href="#step-4-recognizing-spoken-words" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Step 4: Recognizing Spoken Words<a class="headerlink" href="#step-4-recognizing-spoken-words" title="Link to this heading">#</a></h2>
 <p>Speech Recognition is the process of understanding the human voice and transcribing it to text in the machine. There are several libraries available to process speech to text, namely, Bing Speech, Google Speech, Houndify, IBM Speech to Text, etc. We will be using the Google Speech library to convert Speech to Text.</p>
 <p>Google Speech API
 More about the Google Speech API can be read from the Google Cloud Page and the Speech Recognition PyPi page. A few key features that the Google Speech API is capable of are the adaptation of speech. This means that the API understands the domain of the speech. For instance, currencies, addresses, years are all prescribed into the speech-to-text conversion. There are domain-specific classes defined in the algorithm that recognize these occurrences in the input speech. The API works with both on-prem, pre-recorded files as well as live recordings on the microphone in the present working environment. We will analyze live speech through microphonic input in the next section.</p>
@@ -908,7 +920,7 @@ finished recording
 </div>
 </div>
 <section id="playing-the-recorded-signal">
-<h3><span class="section-number">9.5.1. </span>Playing the recorded signal<a class="headerlink" href="#playing-the-recorded-signal" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span>Playing the recorded signal<a class="headerlink" href="#playing-the-recorded-signal" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -965,41 +977,41 @@ finished recording
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ii1003-digitale-signalverarbeitung">
-<h1><span class="section-number">10. </span>II1003– Digitale Signalverarbeitung<a class="headerlink" href="#ii1003-digitale-signalverarbeitung" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>II1003– Digitale Signalverarbeitung<a class="headerlink" href="#ii1003-digitale-signalverarbeitung" title="Link to this heading">#</a></h1>
 <section id="inhalt">
-<h2><span class="section-number">10.1. </span>Inhalt:<a class="headerlink" href="#inhalt" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span>Inhalt:<a class="headerlink" href="#inhalt" title="Link to this heading">#</a></h2>
 <section id="kapitel-1-einfuhrung">
-<h3><span class="section-number">10.1.1. </span>Kapitel 1: Einführung<a class="headerlink" href="#kapitel-1-einfuhrung" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.1.1. </span>Kapitel 1: Einführung<a class="headerlink" href="#kapitel-1-einfuhrung" title="Link to this heading">#</a></h3>
 </section>
 <section id="kapitel-2-xxx">
-<h3><span class="section-number">10.1.2. </span>Kapitel 2: xxx<a class="headerlink" href="#kapitel-2-xxx" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.1.2. </span>Kapitel 2: xxx<a class="headerlink" href="#kapitel-2-xxx" title="Link to this heading">#</a></h3>
 </section>
 <section id="kapitel-3-xxx">
-<h3><span class="section-number">10.1.3. </span>Kapitel 3: xxx<a class="headerlink" href="#kapitel-3-xxx" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.1.3. </span>Kapitel 3: xxx<a class="headerlink" href="#kapitel-3-xxx" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">11. </span>Kapitel 1: Einführung<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Kapitel 1: Einführung<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="wozu-signalverarbeitung">
-<h2><span class="section-number">11.1. </span>1.1 Wozu Signalverarbeitung?<a class="headerlink" href="#wozu-signalverarbeitung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>1.1 Wozu Signalverarbeitung?<a class="headerlink" href="#wozu-signalverarbeitung" title="Link to this heading">#</a></h2>
 </section>
 <section id="deterministische-und-stochastische-signale">
-<h2><span class="section-number">11.2. </span>1.2 Deterministische und stochastische Signale<a class="headerlink" href="#deterministische-und-stochastische-signale" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>1.2 Deterministische und stochastische Signale<a class="headerlink" href="#deterministische-und-stochastische-signale" title="Link to this heading">#</a></h2>
 </section>
 <section id="analoge-versus-digitale-signale">
-<h2><span class="section-number">11.3. </span>1.3 Analoge versus digitale Signale<a class="headerlink" href="#analoge-versus-digitale-signale" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.3. </span>1.3 Analoge versus digitale Signale<a class="headerlink" href="#analoge-versus-digitale-signale" title="Link to this heading">#</a></h2>
 </section>
 <section id="a-d-und-d-a-wandler">
-<h2><span class="section-number">11.4. </span>1.4 A/D- und D/A-Wandler<a class="headerlink" href="#a-d-und-d-a-wandler" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>1.4 A/D- und D/A-Wandler<a class="headerlink" href="#a-d-und-d-a-wandler" title="Link to this heading">#</a></h2>
 </section>
 <section id="anwendungsbeispiele">
-<h2><span class="section-number">11.5. </span>1.5 Anwendungsbeispiele<a class="headerlink" href="#anwendungsbeispiele" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>1.5 Anwendungsbeispiele<a class="headerlink" href="#anwendungsbeispiele" title="Link to this heading">#</a></h2>
 <p><img alt="" src="docs/Chapter1_Cover.jpg" /></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="was-ist-ein-signal">
-<h1><span class="section-number">12. </span>Was ist ein Signal?<a class="headerlink" href="#was-ist-ein-signal" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Was ist ein Signal?<a class="headerlink" href="#was-ist-ein-signal" title="Link to this heading">#</a></h1>
 <p>Ein <span style='color:blue'> <strong>Signal</strong> <span style='color:black'>ist eine <span style='color:blue'><strong>Funktion</strong> <span style='color:black'> einer oder mehrerer unabhängiger <span style='color:blue'> <strong>Größen</strong>, <span style='color:black'> die bestimmte <span style='color:blue'> <strong>Informationen</strong> <span style='color:black'> beinhalten.: <span style='color:blue'>        <strong><span class="math notranslate nohighlight">\(f(x,y,z,t)\)</span></strong></p>
 <ul class="simple">
 <li><p>Signale übertragen Informationen:</p>
@@ -1019,7 +1031,7 @@ finished recording
 <li><p>Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatir, elektrische Spannung, etc.</p></li>
 </ul>
 <section id="signal-gen-in-python">
-<h2><span class="section-number">12.1. </span>Signal Gen. in Python<a class="headerlink" href="#signal-gen-in-python" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Signal Gen. in Python<a class="headerlink" href="#signal-gen-in-python" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Zeit</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
@@ -1058,7 +1070,7 @@ finished recording
 </div>
 </section>
 <section id="audio-beispiel">
-<h2><span class="section-number">12.2. </span>Audio Beispiel<a class="headerlink" href="#audio-beispiel" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Audio Beispiel<a class="headerlink" href="#audio-beispiel" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1165,13 +1177,13 @@ finished recording
 </div>
 </div>
 <section id="signale-ubertragen-informationen">
-<h3><span class="section-number">12.2.1. </span>• Signale übertragen Informationen.<a class="headerlink" href="#signale-ubertragen-informationen" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.2.1. </span>• Signale übertragen Informationen.<a class="headerlink" href="#signale-ubertragen-informationen" title="Link to this heading">#</a></h3>
 </section>
 <section id="signale-sind-funktionen-meist-der-zeit">
-<h3><span class="section-number">12.2.2. </span>• Signale sind Funktionen, meist der Zeit.<a class="headerlink" href="#signale-sind-funktionen-meist-der-zeit" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.2.2. </span>• Signale sind Funktionen, meist der Zeit.<a class="headerlink" href="#signale-sind-funktionen-meist-der-zeit" title="Link to this heading">#</a></h3>
 </section>
 <section id="signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung">
-<h3><span class="section-number">12.2.3. </span>• Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …<a class="headerlink" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.2.3. </span>• Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …<a class="headerlink" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DSV macht spaß!&quot;</span><span class="p">)</span>
@@ -1188,9 +1200,9 @@ finished recording
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="dsv-kapitel-1">
-<h1><span class="section-number">13. </span>DSV Kapitel #1<a class="headerlink" href="#dsv-kapitel-1" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>DSV Kapitel #1<a class="headerlink" href="#dsv-kapitel-1" title="Link to this heading">#</a></h1>
 <section id="einfuhrung">
-<h2><span class="section-number">13.1. </span>Einführung<a class="headerlink" href="#einfuhrung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>Einführung<a class="headerlink" href="#einfuhrung" title="Link to this heading">#</a></h2>
 <p>was ist ein Signal?</p>
 <ol class="arabic simple">
 <li><p>Analoge Signale</p></li>
@@ -1201,7 +1213,7 @@ finished recording
 <p>hier is ein Bild von einer Signal:<img alt="Signal_1.JPG" src="docs/attachment:Signal_1.JPG" /></p>
 </section>
 <section id="id2">
-<h2><span class="section-number">13.2. </span>Einführung<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span>Einführung<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>what is a signal?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1293,7 +1305,7 @@ finished recording
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1302,7 +1314,7 @@ finished recording
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Learn More</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Learn More</p>
       </div>
     </a>
     <a class="right-next"
@@ -1310,7 +1322,7 @@ finished recording
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Digitale Signalverarbeitung</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Digitale Signalverarbeitung</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1323,54 +1335,55 @@ finished recording
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Inhalt der Vorlesung:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">9. Setup</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vorlesung-inhalt-in-einem-demo">9.1. Die Vorlesung Inhalt in einem Demo:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step1-reading-a-file-for-ausio-signals">9.2. Step1: Reading a file for ausio signals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-transforming-audio-frequencies">9.3. Step 2: Transforming Audio Frequencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extracting-features-from-speech">9.4. Step 3: Extracting features from speech</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-recognizing-spoken-words">9.5. Step 4: Recognizing Spoken Words</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-the-recorded-signal">9.5.1. Playing the recorded signal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. Inhalt der Vorlesung:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">8. Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-vorlesung-inhalt-in-einem-demo">8.1. Die Vorlesung Inhalt in einem Demo:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step1-reading-a-file-for-ausio-signals">8.2. Step1: Reading a file for ausio signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-transforming-audio-frequencies">8.3. Step 2: Transforming Audio Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extracting-features-from-speech">8.4. Step 3: Extracting features from speech</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-recognizing-spoken-words">8.5. Step 4: Recognizing Spoken Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playing-the-recorded-signal">8.5.1. Playing the recorded signal</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii1003-digitale-signalverarbeitung">10. II1003– Digitale Signalverarbeitung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">10.1. Inhalt:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-1-einfuhrung">10.1.1. Kapitel 1: Einführung</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-2-xxx">10.1.2. Kapitel 2: xxx</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-3-xxx">10.1.3. Kapitel 3: xxx</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii1003-digitale-signalverarbeitung">9. II1003– Digitale Signalverarbeitung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhalt">9.1. Inhalt:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-1-einfuhrung">9.1.1. Kapitel 1: Einführung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-2-xxx">9.1.2. Kapitel 2: xxx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitel-3-xxx">9.1.3. Kapitel 3: xxx</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11. Kapitel 1: Einführung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-signalverarbeitung">11.1. 1.1 Wozu Signalverarbeitung?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">11.2. 1.2 Deterministische und stochastische Signale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analoge-versus-digitale-signale">11.3. 1.3 Analoge versus digitale Signale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-d-und-d-a-wandler">11.4. 1.4 A/D- und D/A-Wandler</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendungsbeispiele">11.5. 1.5 Anwendungsbeispiele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10. Kapitel 1: Einführung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-signalverarbeitung">10.1. 1.1 Wozu Signalverarbeitung?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">10.2. 1.2 Deterministische und stochastische Signale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analoge-versus-digitale-signale">10.3. 1.3 Analoge versus digitale Signale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-d-und-d-a-wandler">10.4. 1.4 A/D- und D/A-Wandler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anwendungsbeispiele">10.5. 1.5 Anwendungsbeispiele</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">12. Was ist ein Signal?</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-gen-in-python">12.1. Signal Gen. in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-beispiel">12.2. Audio Beispiel</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-ubertragen-informationen">12.2.1. • Signale übertragen Informationen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-sind-funktionen-meist-der-zeit">12.2.2. • Signale sind Funktionen, meist der Zeit.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung">12.2.3. • Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">11. Was ist ein Signal?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-gen-in-python">11.1. Signal Gen. in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-beispiel">11.2. Audio Beispiel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-ubertragen-informationen">11.2.1. • Signale übertragen Informationen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-sind-funktionen-meist-der-zeit">11.2.2. • Signale sind Funktionen, meist der Zeit.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signale-werden-mit-sensoren-gemessen-und-konnen-in-beliebiger-physikalischer-form-vorkommen-druck-temperatur-elektrische-spannung">11.2.3. • Signale werden mit Sensoren gemessen und können in beliebiger physikalischer Form vorkommen: Druck, Temperatur, elektrische Spannung, …</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsv-kapitel-1">13. DSV Kapitel #1</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">13.1. Einführung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">13.2. Einführung</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dsv-kapitel-1">12. DSV Kapitel #1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einfuhrung">12.1. Einführung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">12.2. Einführung</a></li>
 </ul>
 </li>
 </ul>
@@ -1422,8 +1435,8 @@ By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
