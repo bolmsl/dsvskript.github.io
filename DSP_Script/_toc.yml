@@ -56,3 +56,7 @@ parts:
   numbered: true
   chapters:
   - file: docs/07_DL4SV
+- caption: Test
+  numbered: true
+  chapters:
+  - file: docs/test
