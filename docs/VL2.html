@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>18. Lernziele &#8212; Digitale Signalverarbeitung</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/VL2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="20. Zeitdiskrete Signale" href="03_Zeitdiskret.html" />
+    <link rel="prev" title="17. DSV Vorlesung 1" href="dsvvrl1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/CoverImage.JPG" class="logo__image only-light" alt="Digitale Signalverarbeitung - Home"/>
+    <script>document.write(`<img src="../_static/CoverImage.JPG" class="logo__image only-dark" alt="Digitale Signalverarbeitung - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">1. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">2. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">3. Signale und Signalverarbeitung</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">6. Learn More</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">7. Inhalt der Vorlesung:</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">13. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">14. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">15. Digitale Signalverarbeitung - Einführung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">17. DSV Vorlesung 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Lernziele</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">20. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">21. Systeme</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">24. Was ist ein Elementarsignal?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">36. Elementare Signale</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">38. Filter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">39. stochastische Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">40. 2. Sensorik und Zeitdiskrete Signale</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">41. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">42. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">43. FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">44. Fourier - Transformation</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">61. Digitale Signalverarbeitung</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="test.html">62. Test Heading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/VL2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lernziele</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Lernziele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">19. 1. Systeme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">19.1. 1.1 Systembeschreibung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">19.2. 1.2 Lineare vs. nicht-lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">19.3. 1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">19.4. 1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">19.4.1. Dynamische Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">19.4.2. Gedächtnislose Systeme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">19.5. 1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">19.5.1. Kausale Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">19.5.2. Nichtkausale Systeme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">19.6. 1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">19.6.1. Instabiles System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">19.7. 1.6 LZI Systeme</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="lernziele">
+<h1><span class="section-number">18. </span>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>In diesem Kapitel wollen wir uns unterschiedliche Eigenschaften von Systemen anschauen und den Unterschied zwischen aktiven und passiven Sensoren lernen. Außerdem werden wir die Grundlagen der Umwandlung eines analogen zu einem digitalen Signal anschauen. Dies beinhaltet die Abtastung, und Quantisierung. Zu guter letzt wird das Problem von Aliasing behandelt.</p>
+</div></blockquote>
+<blockquote>
+<div><p>In der Demo werden anschließend Systeme auf ihre Eigenschaften analysiert, sowie ein analoges Signal digitalisiert.</p>
+</div></blockquote>
+</section>
+<section id="systeme">
+<h1><span class="section-number">19. </span>1. Systeme<a class="headerlink" href="#systeme" title="Link to this heading">#</a></h1>
+<section id="systembeschreibung">
+<h2><span class="section-number">19.1. </span>1.1 Systembeschreibung<a class="headerlink" href="#systembeschreibung" title="Link to this heading">#</a></h2>
+<p>Ein System <span class="math notranslate nohighlight">\((H)\)</span> wird in der Regel durch das Eingabe-Ausgabe-Verhalten beschrieben. Dabei interessieren uns die Beziehungen zwischen Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> (oder <span class="math notranslate nohighlight">\(x[n]\)</span> für diskrete Systeme) und Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> (bzw. <span class="math notranslate nohighlight">\(y[n]\)</span>). Die Modellierung eines Systems kann dabei entweder auf eine Black-Box- oder eine White-Box-Perspektive zurückgreifen.</p>
+<p><strong>Black-Box-Modell</strong>
+Das Black-Box-Modell geht davon aus, dass der innere Aufbau des Systems unbekannt oder nicht von Interesse ist. Hier wird das System als eine Art “schwarzer Kasten” behandelt, bei dem nur die äußeren Ein- und Ausgänge betrachtet werden.</p>
+<p>Vorteile:</p>
+<ul class="simple">
+<li><p>Einfachheit: Die Analyse konzentriert sich ausschließlich auf die Eingabe-Ausgabe-Beziehung.
+Ideal für Systeme, bei denen der innere Aufbau nicht zugänglich oder komplex ist (z. B. in der experimentellen Systemidentifikation).</p></li>
+</ul>
+<p>Beispiel:</p>
+<ul class="simple">
+<li><p>Ein RC-Glied, bei dem wir nur die Spannung am Eingang und die Spannung am Ausgang messen, ohne den inneren Aufbau des Systems zu betrachten.</p></li>
+</ul>
+<p><strong>White-Box-Modell</strong>
+Im Gegensatz dazu bietet das White-Box-Modell eine detaillierte Darstellung des Systems, einschließlich seiner internen Strukturen, Mechanismen und physikalischen Prinzipien. Hier werden physikalische Modelle oder Gleichungen genutzt, um das Verhalten des Systems zu beschreiben.</p>
+<p>Vorteile:</p>
+<ul class="simple">
+<li><p>Erhöhte Genauigkeit: Das System kann genau simuliert und optimiert werden.</p></li>
+<li><p>Verständlichkeit: Die internen Mechanismen und ihre Auswirkungen werden transparent.</p></li>
+</ul>
+<p><img alt="image.png" src="docs/da1213e6-aa45-4884-96ca-96c5980c8de6.png" /></p>
+</section>
+<section id="lineare-vs-nicht-lineare">
+<h2><span class="section-number">19.2. </span>1.2 Lineare vs. nicht-lineare<a class="headerlink" href="#lineare-vs-nicht-lineare" title="Link to this heading">#</a></h2>
+<p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist *<em>linear</em>+, wenn es die folgenden beiden Prinzipien erfüllt:</p>
+<ol class="arabic simple">
+<li><p><strong>Additivität</strong> (Superpositionsprinzip): Wenn <span class="math notranslate nohighlight">\(H{x_1(t)} = y_1(t)\)</span> und <span class="math notranslate nohighlight">\(H{x_2(t)} = y_2(t)\)</span> dann gilt:
+$<span class="math notranslate nohighlight">\(
+H\{x_1(t) + x_2(t)\} = y_1(t) + y_2(t)
+\)</span>$<br></p></li>
+<li><p><strong>Homogenität</strong> (Skalierung): Für jede Skalarkonstante <span class="math notranslate nohighlight">\(c\)</span> gilt:
+$<span class="math notranslate nohighlight">\(
+H\{c \cdot x(t)\} = c \cdot y(t)
+\)</span>$</p></li>
+</ol>
+<p>Dementsprechend erfüllt ein <strong>nicht-lineares System</strong> nicht die Eigenschaften Additivität und Homogenität.</p>
+<p>Eigenschaften:</p>
+<ul class="simple">
+<li><p>Die Ausgangssignale eines linearen Systems sind direkt proportional zu den Eingangssignalen.</p></li>
+<li><p>Lineare Systeme lassen sich einfach analysieren und modellieren, z. B. durch Differential- oder Differenzengleichungen.</p></li>
+<li><p>Sie können mit Übertragungsfunktionen, Impulsantworten und Fourier-Transformationen beschrieben werden.</p></li>
+</ul>
+<p>Beispiel:</p>
+<p>Ein elektrisches Netzwerk aus Widerständen und Kondensatoren ist bei linearem Verhalten (ohne Sättigung oder nicht-lineare Elemente wie Dioden) ein lineares System</p>
+<p><img alt="image.png" src="docs/ade8745f-280f-482e-9d7f-9c5ca7ca836b.png" /></p>
+</section>
+<section id="zeitinvariante-vs-zeitvariante-systeme">
+<h2><span class="section-number">19.3. </span>1.3 Zeitinvariante vs. zeitvariante Systeme<a class="headerlink" href="#zeitinvariante-vs-zeitvariante-systeme" title="Link to this heading">#</a></h2>
+<p><strong>Definition:</strong> <br>
+Ein System <span class="math notranslate nohighlight">\(H\)</span> ist <strong>zeitinvariant</strong>, wenn eine Zeitverschiebung des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span>
+zu einer äquivalenten Zeitverschiebung des Ausgangssignals <span class="math notranslate nohighlight">\(y(t)\)</span> führt, ohne dass sich die grundlegende Systemfunktion verändert.</p>
+<p><strong>Mathematische Beschreibung:</strong>
+Wenn das Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> ein Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> erzeugt, also <span class="math notranslate nohighlight">\(H{x(t)} = y(t)\)</span>, dann gilt für eine Zeitverschiebung <span class="math notranslate nohighlight">\(t_0\)</span>:
+$<span class="math notranslate nohighlight">\(
+H\{x(t-t_0)\} = y(t-t_0)
+\)</span><span class="math notranslate nohighlight">\(&lt;br&gt;
+Dementsprechend ist ein System **zeitvariant**, wenn eine Zeitverschiebung des Eingangssignals \)</span>x(t)<span class="math notranslate nohighlight">\( nicht zu einer äquivalenten Zeitverschiebung des Ausgangssignals \)</span>y(t)$ führt.</p>
+<p>Eigenschaften:</p>
+<ul class="simple">
+<li><p>Das Systemverhalten bleibt konstant, unabhängig vom Zeitpunkt, zu dem das Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span>auf das System angewendet wird.</p></li>
+<li><p>Solche Systeme sind einfacher zu analysieren, da ihre Eigenschaften unabhängig von der Zeit sind.</p></li>
+</ul>
+<p>Beispiel:</p>
+<ul class="simple">
+<li><p>Ein RC-Tiefpassfilter ist zeitinvariant, da sich das Übertragungsverhalten nicht ändert, wenn das Eingangssignal zeitlich verschoben wird.</p></li>
+</ul>
+<p><img alt="image.png" src="docs/48efb1cf-cae4-4339-99b8-13501b04b1c8.png" /></p>
+</section>
+<section id="dynamische-systeme-vs-gedachtnichslose-systeme">
+<h2><span class="section-number">19.4. </span>1.4 Dynamische Systeme vs. gedächtnichslose Systeme<a class="headerlink" href="#dynamische-systeme-vs-gedachtnichslose-systeme" title="Link to this heading">#</a></h2>
+<section id="dynamische-systeme">
+<h3><span class="section-number">19.4.1. </span>Dynamische Systeme<a class="headerlink" href="#dynamische-systeme" title="Link to this heading">#</a></h3>
+<p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist dynamisch, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> nicht nur vom aktuellen Eingangssignal <span class="math notranslate nohighlight">\(x(t_0)\)</span>, sondern auch von früheren (und manchmal zukünftigen) Eingangswerten abhängt.</p>
+<p>Mathematische Beschreibung:
+$<span class="math notranslate nohighlight">\(
+y(t_0) = H\{x(t), t \leq t_0\}
+\)</span>$</p>
+<p>Eigenschaften:</p>
+<ul class="simple">
+<li><p>Speicherung: Dynamische Systeme haben ein “Gedächtnis” für vergangene Zustände.</p></li>
+<li><p>Zeitabhängigkeit: Der aktuelle Zustand des Systems wird durch seine Vorgeschichte beeinflusst.</p></li>
+</ul>
+<p>Beispiele:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y(t) = x(t-1)\)</span></p></li>
+<li><p>RC-Schaltkreis: Die Ausgangsspannung hängt von der Ladung des Kondensators ab, die durch vergangene Ströme bestimmt wird.</p></li>
+<li><p>Feder-Masse-System: Die Bewegung der Masse hängt nicht nur von der aktuellen Kraft, sondern auch von ihrer Geschwindigkeit (Abhängigkeit von der Vergangenheit) ab.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gedachtnislose-systeme">
+<h3><span class="section-number">19.4.2. </span>Gedächtnislose Systeme<a class="headerlink" href="#gedachtnislose-systeme" title="Link to this heading">#</a></h3>
+<p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist gedächtnislos (memory-less), wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu jedem Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> nur vom Eingangssignal <span class="math notranslate nohighlight">\(x(t_0)\)</span> zum gleichen Zeitpunkt abhängt. Es gibt keinen Einfluss vergangener oder zukünftiger Eingangswerte.</p>
+<p>Mathematische Beschreibung:
+$<span class="math notranslate nohighlight">\(
+y(t_0) = H\{x(t_0)\}
+\)</span>$</p>
+<p>Eigenschaften:</p>
+<ul class="simple">
+<li><p>Kein Speicher: Das System hat kein “Gedächtnis” für vergangene Eingangswerte.</p></li>
+<li><p>Reaktionszeit: Das Ausgangssignal wird sofort durch das aktuelle Eingangssignal bestimmt.</p></li>
+</ul>
+<p>Beispiele:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y(t) = x(t-1)\)</span></p></li>
+<li><p>Ohmsches Gesetz: <span class="math notranslate nohighlight">\(V = R \cdot I\)</span>, wo die Spannung <span class="math notranslate nohighlight">\(V\)</span> direkt von der momentanen Stromstärke <span class="math notranslate nohighlight">\(I\)</span> (Eingang) abhängt</p></li>
+</ul>
+</section>
+</section>
+<section id="kausale-vs-nichtkausale-systeme">
+<h2><span class="section-number">19.5. </span>1.4 Kausale vs. nichtkausale Systeme<a class="headerlink" href="#kausale-vs-nichtkausale-systeme" title="Link to this heading">#</a></h2>
+<section id="kausale-systeme">
+<h3><span class="section-number">19.5.1. </span>Kausale Systeme<a class="headerlink" href="#kausale-systeme" title="Link to this heading">#</a></h3>
+<p><strong>Definition:</strong></p>
+<p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist kausal, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu jedem Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> nur von den gegenwärtigen und vergangenen Werten des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> abhängt. Zukünftige Werte des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> (für <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>) beeinflussen das Ausgangssignal nicht.</p>
+<p>Mathematische Beschreibung:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t_0) = H\{x(t), t\leq t_0\}
+\]</div>
+<p><strong>Eigenschaften:</strong></p>
+<ul class="simple">
+<li><p>Physikalische Realität: Reale Systeme sind immer kausal, da sie nicht auf zukünftige Ereignisse reagieren können.</p></li>
+<li><p>Berechnung: Der Ausgangswert kann in Echtzeit berechnet werden, basierend auf den bekannten Werten des Eingangssignals.</p></li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y[n] = x[n-1]\)</span></p></li>
+<li><p>RC-Schaltkreis: Die Ausgangsspannung hängt von der Ladung des Kondensators ab, die durch vergangene Ströme bestimmt wurde.</p></li>
+<li><p>Audio-Effekte: Ein Equalizer reagiert nur auf bereits abgespielte oder gegenwärtige Signale, nicht auf zukünftige.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="nichtkausale-systeme">
+<h3><span class="section-number">19.5.2. </span>Nichtkausale Systeme<a class="headerlink" href="#nichtkausale-systeme" title="Link to this heading">#</a></h3>
+<p><strong>Definition:</strong></p>
+<p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist nicht-kausal, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu einem bestimmten Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> auch von zukünftigen Werten des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> abhängt, also für <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>.</p>
+<p><strong>Mathematische Beschreibung:</strong>
+$<span class="math notranslate nohighlight">\(
+y(t_0) = H\{x(t), t \leq t_0 \, \text{und} \, t &gt; t_0\}
+\)</span>$</p>
+<p><strong>Eigenschaften:</strong></p>
+<ul class="simple">
+<li><p>Theoretische Anwendung: Nicht-kausale Systeme sind oft in der Theorie oder bei Offlinesignalverarbeitung relevant, da zukünftige Werte bekannt sein müssen.</p></li>
+<li><p>Nicht realisierbar in der physischen Welt, aber nützlich für Vorhersagealgorithmen oder bei der Nachbearbeitung von Signalen.</p></li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y[n] = x[n+1]\)</span></p></li>
+<li><p>Signalglättung: Ein Filter, das auf zukünftige Datenpunkte zugreift, um ein Signal zu glätten.</p></li>
+<li><p>Fourier-Transformation: Die Analyse eines Signals im Frequenzbereich erfordert Kenntnisse über das gesamte Signal, einschließlich zukünftiger Werte.</p></li>
+</ul>
+</section>
+</section>
+<section id="stabile-vs-instabile-systeme">
+<h2><span class="section-number">19.6. </span>1.5 Stabile vs. Instabile Systeme<a class="headerlink" href="#stabile-vs-instabile-systeme" title="Link to this heading">#</a></h2>
+<p><strong>Definition:</strong></p>
+<p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist stabil, wenn ein begrenztes Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> immer zu einem ebenfalls begrenzten Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> führt.</p>
+<p><strong>Mathematische Beschreibung:</strong>
+$<span class="math notranslate nohighlight">\(
+\text{Wenn } |x(t)| \leq M_x, \text{ dann gilt } |y(t)| \leq M_y \, \forall t
+\)</span><span class="math notranslate nohighlight">\(
+Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</span>M_y$ endliche Werte.</p>
+<hr class="docutils" />
+<p>BIBO-Stabilität (Bounded Input, Bounded Output):</p>
+<blockquote>
+<div><p>Ein System ist BIBO-stabil, wenn es auf jedes begrenzte Eingangssignal mit einem ebenfalls begrenzten Ausgang reagiert.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Eigenschaften:</strong></p>
+<ul class="simple">
+<li><p>Stabilität ist entscheidend für die Zuverlässigkeit eines Systems.</p></li>
+<li><p>Viele Analysewerkzeuge, wie die Laplace- und Z-Transformation, setzen Stabilität voraus.</p></li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<ul class="simple">
+<li><p>RC-Tiefpassfilter: Das Ausgangssignal bleibt begrenzt, auch wenn das Eingangssignal schwankt.</p></li>
+<li><p>Gedämpfte Schwingung: Ein System, das nach einer Anregung zu einem Ruhepunkt zurückkehrt.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="instabiles-system">
+<h3><span class="section-number">19.6.1. </span>Instabiles System<a class="headerlink" href="#instabiles-system" title="Link to this heading">#</a></h3>
+<p><strong>Definition:</strong></p>
+<p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist instabil, wenn ein begrenztes Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> zu einem unbeschränkten Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> führen kann.</p>
+<p><strong>Eigenschaften:</strong></p>
+<ul class="simple">
+<li><p>Instabile Systeme reagieren empfindlich auf kleine Änderungen im Eingangssignal, was zu unkontrollierten Ergebnissen führen kann.</p></li>
+<li><p>Sie sind in der Praxis häufig unerwünscht, können aber in bestimmten Anwendungen absichtlich eingesetzt werden (z. B. in Oszillatoren).</p></li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<ul class="simple">
+<li><p>Ungefilterter Verstärker: Ein Verstärker, der keine Begrenzung für die Ausgangsspannung hat, kann bei einem schwachen Eingangssignal zu einer Sättigung oder Übersteuerung führen.</p></li>
+<li><p>Ungedämpfte Schwingung: Ein System, das bei einer Anregung nicht zur Ruhe kommt und stattdessen immer größere Schwingungen zeigt.</p></li>
+</ul>
+</section>
+</section>
+<section id="lzi-systeme">
+<h2><span class="section-number">19.7. </span>1.6 LZI Systeme<a class="headerlink" href="#lzi-systeme" title="Link to this heading">#</a></h2>
+<p>Im folgenden Verlauf der Vorlesung werden wir <strong>l</strong>ineare <strong>z</strong>eit<strong>i</strong>nvariante Systeme betrachten.</p>
+<p>LZI Systeme können durch verschiedene mathematische Formeln und Modelle beschrieben werden:</p>
+<ul class="simple">
+<li><p>Impulsantwort</p></li>
+<li><p>Übertragungsfunktion</p></li>
+<li><p>Differentialgleichungen (DGL)</p></li>
+<li><p>Blockdiagramme</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dsvvrl1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>DSV Vorlesung 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03_Zeitdiskret.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>Zeitdiskrete Signale</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18. Lernziele</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">19. 1. Systeme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">19.1. 1.1 Systembeschreibung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">19.2. 1.2 Lineare vs. nicht-lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">19.3. 1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">19.4. 1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">19.4.1. Dynamische Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">19.4.2. Gedächtnislose Systeme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">19.5. 1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">19.5.1. Kausale Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">19.5.2. Nichtkausale Systeme</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">19.6. 1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">19.6.1. Instabiles System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">19.7. 1.6 LZI Systeme</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
