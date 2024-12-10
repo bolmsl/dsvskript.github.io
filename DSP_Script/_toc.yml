@@ -2,7 +2,7 @@ format: jb-book
 root: docs/index
 parts:
 - caption: Vorkurs
-  numbered: true
+  numbered: false
   chapters:
   - file: docs/01_Python
   - file: docs/02_Pythons
@@ -13,7 +13,7 @@ parts:
   
   - file: docs/01_learn_more
 - caption: Einführung
-  numbered: true
+  numbered: false
   chapters:
   - file: docs/01_DSP_Lecture
   - file: docs/01_Einfuehrung
@@ -21,13 +21,13 @@ parts:
   - file: docs/einfuehrung_02_zusammenfassung
   - file: docs/dsvvrl1
 - caption: Zeitdiskrete Signale
-  numbered: true
+  numbered: false
   chapters:
   - file: docs/VL2
   - file: docs/03_Zeitdiskret
   - file: docs/03_Systeme_Sensorik_Diskret
 - caption: Elementare Signale
-  numbered: true
+  numbered: false
   chapters:
   - file: docs/03_Elementare_Signale
   - file: docs/ElementareSignale
