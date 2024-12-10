@@ -1,4 +1,4 @@
-## Systeme & Sensorik & zeitdiskrete Signale
+# Systeme & Sensorik & zeitdiskrete Signale
 ## Lernziele
 
 >In diesem Kapitel wollen wir uns unterschiedliche Eigenschaften von Systemen anschauen und den Unterschied zwischen aktiven und passiven Sensoren lernen. Außerdem werden wir die Grundlagen der Umwandlung eines analogen zu einem digitalen Signal anschauen. Dies beinhaltet die Abtastung, und Quantisierung. Zu guter letzt wird das Problem von Aliasing behandelt.
@@ -28,7 +28,7 @@ Vorteile:
 - Erhöhte Genauigkeit: Das System kann genau simuliert und optimiert werden.
 - Verständlichkeit: Die internen Mechanismen und ihre Auswirkungen werden transparent.
 
-```{figure} /_static/lecture_specific/vl2/1.png
+```{figure} /_static/lecture_specific/vl2/test.png
 ```
 
 ### 1.2 Lineare vs. nicht-lineare 

@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/VL2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Zeitdiskrete Signale" href="03_Zeitdiskret.html" />
-    <link rel="prev" title="DSV Vorlesung 1" href="dsvvrl1.html" />
+    <link rel="next" title="Was ist ein Elementarsignal?" href="03_Elementare_Signale.html" />
+    <link rel="prev" title="Digitale Signalverarbeitung" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,38 +171,9 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">1. Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">2. An Introductory Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">3. Signale und Signalverarbeitung</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">Learn More</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">Inhalt der Vorlesung:</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">13. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">Digitale Signal Verarbeitung: Einführung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">15. Digitale Signalverarbeitung - Einführung</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">DSV Vorlesung 1</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Systeme &amp; Sensorik &amp; zeitdiskrete Signale</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">Zeitdiskrete Signale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">21. Systeme</a></li>
-
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
 <ul class="nav bd-sidenav">
@@ -414,31 +385,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Systeme &amp; Sensorik &amp; zeitdiskrete Signale</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">1. Systeme</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">1.1 Systembeschreibung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">1.2 Lineare vs. nicht-lineare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">Dynamische Systeme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">Gedächtnislose Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">1. Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">1.1 Systembeschreibung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">1.2 Lineare vs. nicht-lineare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">Dynamische Systeme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">Gedächtnislose Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">Kausale Systeme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">Nichtkausale Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">Kausale Systeme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">Nichtkausale Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">Instabiles System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">Instabiles System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">1.6 LZI Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">1.6 LZI Systeme</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -449,11 +418,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="systeme-sensorik-zeitdiskrete-signale">
+  <section class="tex2jax_ignore mathjax_ignore" id="systeme-sensorik-zeitdiskrete-signale">
 <h1>Systeme &amp; Sensorik &amp; zeitdiskrete Signale<a class="headerlink" href="#systeme-sensorik-zeitdiskrete-signale" title="Link to this heading">#</a></h1>
-</section>
 <section id="lernziele">
-<h1>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h1>
+<h2>Lernziele<a class="headerlink" href="#lernziele" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>In diesem Kapitel wollen wir uns unterschiedliche Eigenschaften von Systemen anschauen und den Unterschied zwischen aktiven und passiven Sensoren lernen. Außerdem werden wir die Grundlagen der Umwandlung eines analogen zu einem digitalen Signal anschauen. Dies beinhaltet die Abtastung, und Quantisierung. Zu guter letzt wird das Problem von Aliasing behandelt.</p>
 </div></blockquote>
@@ -462,9 +430,9 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="systeme">
-<h1>1. Systeme<a class="headerlink" href="#systeme" title="Link to this heading">#</a></h1>
+<h2>1. Systeme<a class="headerlink" href="#systeme" title="Link to this heading">#</a></h2>
 <section id="systembeschreibung">
-<h2>1.1 Systembeschreibung<a class="headerlink" href="#systembeschreibung" title="Link to this heading">#</a></h2>
+<h3>1.1 Systembeschreibung<a class="headerlink" href="#systembeschreibung" title="Link to this heading">#</a></h3>
 <p>Ein System <span class="math notranslate nohighlight">\((H)\)</span> wird in der Regel durch das Eingabe-Ausgabe-Verhalten beschrieben. Dabei interessieren uns die Beziehungen zwischen Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> (oder <span class="math notranslate nohighlight">\(x[n]\)</span> für diskrete Systeme) und Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> (bzw. <span class="math notranslate nohighlight">\(y[n]\)</span>). Die Modellierung eines Systems kann dabei entweder auf eine Black-Box- oder eine White-Box-Perspektive zurückgreifen.</p>
 <p><strong>Black-Box-Modell</strong>
 Das Black-Box-Modell geht davon aus, dass der innere Aufbau des Systems unbekannt oder nicht von Interesse ist. Hier wird das System als eine Art “schwarzer Kasten” behandelt, bei dem nur die äußeren Ein- und Ausgänge betrachtet werden.</p>
@@ -485,11 +453,11 @@ Im Gegensatz dazu bietet das White-Box-Modell eine detaillierte Darstellung des 
 <li><p>Verständlichkeit: Die internen Mechanismen und ihre Auswirkungen werden transparent.</p></li>
 </ul>
 <figure class="align-default">
-<img alt="../_images/1.png" src="../_images/1.png" />
+<img alt="../_images/test.png" src="../_images/test.png" />
 </figure>
 </section>
 <section id="lineare-vs-nicht-lineare">
-<h2>1.2 Lineare vs. nicht-lineare<a class="headerlink" href="#lineare-vs-nicht-lineare" title="Link to this heading">#</a></h2>
+<h3>1.2 Lineare vs. nicht-lineare<a class="headerlink" href="#lineare-vs-nicht-lineare" title="Link to this heading">#</a></h3>
 <p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist *<em>linear</em>+, wenn es die folgenden beiden Prinzipien erfüllt:</p>
 <ol class="arabic simple">
 <li><p><strong>Additivität</strong> (Superpositionsprinzip): Wenn <span class="math notranslate nohighlight">\(H{x_1(t)} = y_1(t)\)</span> und <span class="math notranslate nohighlight">\(H{x_2(t)} = y_2(t)\)</span> dann gilt:
@@ -515,7 +483,7 @@ H\{c \cdot x(t)\} = c \cdot y(t)
 </figure>
 </section>
 <section id="zeitinvariante-vs-zeitvariante-systeme">
-<h2>1.3 Zeitinvariante vs. zeitvariante Systeme<a class="headerlink" href="#zeitinvariante-vs-zeitvariante-systeme" title="Link to this heading">#</a></h2>
+<h3>1.3 Zeitinvariante vs. zeitvariante Systeme<a class="headerlink" href="#zeitinvariante-vs-zeitvariante-systeme" title="Link to this heading">#</a></h3>
 <p><strong>Definition:</strong> <br>
 Ein System <span class="math notranslate nohighlight">\(H\)</span> ist <strong>zeitinvariant</strong>, wenn eine Zeitverschiebung des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span>
 zu einer äquivalenten Zeitverschiebung des Ausgangssignals <span class="math notranslate nohighlight">\(y(t)\)</span> führt, ohne dass sich die grundlegende Systemfunktion verändert.</p>
@@ -539,9 +507,9 @@ Dementsprechend ist ein System **zeitvariant**, wenn eine Zeitverschiebung des E
 </figure>
 </section>
 <section id="dynamische-systeme-vs-gedachtnichslose-systeme">
-<h2>1.4 Dynamische Systeme vs. gedächtnichslose Systeme<a class="headerlink" href="#dynamische-systeme-vs-gedachtnichslose-systeme" title="Link to this heading">#</a></h2>
+<h3>1.4 Dynamische Systeme vs. gedächtnichslose Systeme<a class="headerlink" href="#dynamische-systeme-vs-gedachtnichslose-systeme" title="Link to this heading">#</a></h3>
 <section id="dynamische-systeme">
-<h3>Dynamische Systeme<a class="headerlink" href="#dynamische-systeme" title="Link to this heading">#</a></h3>
+<h4>Dynamische Systeme<a class="headerlink" href="#dynamische-systeme" title="Link to this heading">#</a></h4>
 <p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist dynamisch, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> nicht nur vom aktuellen Eingangssignal <span class="math notranslate nohighlight">\(x(t_0)\)</span>, sondern auch von früheren (und manchmal zukünftigen) Eingangswerten abhängt.</p>
 <p>Mathematische Beschreibung:
 $<span class="math notranslate nohighlight">\(
@@ -561,7 +529,7 @@ y(t_0) = H\{x(t), t \leq t_0\}
 </section>
 <hr class="docutils" />
 <section id="gedachtnislose-systeme">
-<h3>Gedächtnislose Systeme<a class="headerlink" href="#gedachtnislose-systeme" title="Link to this heading">#</a></h3>
+<h4>Gedächtnislose Systeme<a class="headerlink" href="#gedachtnislose-systeme" title="Link to this heading">#</a></h4>
 <p>Definition: Ein System <span class="math notranslate nohighlight">\(H\)</span> ist gedächtnislos (memory-less), wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu jedem Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> nur vom Eingangssignal <span class="math notranslate nohighlight">\(x(t_0)\)</span> zum gleichen Zeitpunkt abhängt. Es gibt keinen Einfluss vergangener oder zukünftiger Eingangswerte.</p>
 <p>Mathematische Beschreibung:
 $<span class="math notranslate nohighlight">\(
@@ -580,9 +548,9 @@ y(t_0) = H\{x(t_0)\}
 </section>
 </section>
 <section id="kausale-vs-nichtkausale-systeme">
-<h2>1.4 Kausale vs. nichtkausale Systeme<a class="headerlink" href="#kausale-vs-nichtkausale-systeme" title="Link to this heading">#</a></h2>
+<h3>1.4 Kausale vs. nichtkausale Systeme<a class="headerlink" href="#kausale-vs-nichtkausale-systeme" title="Link to this heading">#</a></h3>
 <section id="kausale-systeme">
-<h3>Kausale Systeme<a class="headerlink" href="#kausale-systeme" title="Link to this heading">#</a></h3>
+<h4>Kausale Systeme<a class="headerlink" href="#kausale-systeme" title="Link to this heading">#</a></h4>
 <p><strong>Definition:</strong></p>
 <p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist kausal, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu jedem Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> nur von den gegenwärtigen und vergangenen Werten des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> abhängt. Zukünftige Werte des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> (für <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>) beeinflussen das Ausgangssignal nicht.</p>
 <p>Mathematische Beschreibung:</p>
@@ -604,7 +572,7 @@ y(t_0) = H\{x(t), t\leq t_0\}
 </section>
 <hr class="docutils" />
 <section id="nichtkausale-systeme">
-<h3>Nichtkausale Systeme<a class="headerlink" href="#nichtkausale-systeme" title="Link to this heading">#</a></h3>
+<h4>Nichtkausale Systeme<a class="headerlink" href="#nichtkausale-systeme" title="Link to this heading">#</a></h4>
 <p><strong>Definition:</strong></p>
 <p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist nicht-kausal, wenn das Ausgangssignal <span class="math notranslate nohighlight">\(y(t_0)\)</span> zu einem bestimmten Zeitpunkt <span class="math notranslate nohighlight">\(t_0\)</span> auch von zukünftigen Werten des Eingangssignals <span class="math notranslate nohighlight">\(x(t)\)</span> abhängt, also für <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>.</p>
 <p><strong>Mathematische Beschreibung:</strong>
@@ -625,7 +593,7 @@ y(t_0) = H\{x(t), t \leq t_0 \, \text{und} \, t &gt; t_0\}
 </section>
 </section>
 <section id="stabile-vs-instabile-systeme">
-<h2>1.5 Stabile vs. Instabile Systeme<a class="headerlink" href="#stabile-vs-instabile-systeme" title="Link to this heading">#</a></h2>
+<h3>1.5 Stabile vs. Instabile Systeme<a class="headerlink" href="#stabile-vs-instabile-systeme" title="Link to this heading">#</a></h3>
 <p><strong>Definition:</strong></p>
 <p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist stabil, wenn ein begrenztes Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> immer zu einem ebenfalls begrenzten Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> führt.</p>
 <p><strong>Mathematische Beschreibung:</strong>
@@ -651,7 +619,7 @@ Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</spa
 </ul>
 <hr class="docutils" />
 <section id="instabiles-system">
-<h3>Instabiles System<a class="headerlink" href="#instabiles-system" title="Link to this heading">#</a></h3>
+<h4>Instabiles System<a class="headerlink" href="#instabiles-system" title="Link to this heading">#</a></h4>
 <p><strong>Definition:</strong></p>
 <p>Ein System <span class="math notranslate nohighlight">\(H\)</span> ist instabil, wenn ein begrenztes Eingangssignal <span class="math notranslate nohighlight">\(x(t)\)</span> zu einem unbeschränkten Ausgangssignal <span class="math notranslate nohighlight">\(y(t)\)</span> führen kann.</p>
 <p><strong>Eigenschaften:</strong></p>
@@ -667,7 +635,7 @@ Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</spa
 </section>
 </section>
 <section id="lzi-systeme">
-<h2>1.6 LZI Systeme<a class="headerlink" href="#lzi-systeme" title="Link to this heading">#</a></h2>
+<h3>1.6 LZI Systeme<a class="headerlink" href="#lzi-systeme" title="Link to this heading">#</a></h3>
 <p>Im folgenden Verlauf der Vorlesung werden wir <strong>l</strong>ineare <strong>z</strong>eit<strong>i</strong>nvariante Systeme betrachten.</p>
 <p>LZI Systeme können durch verschiedene mathematische Formeln und Modelle beschrieben werden:</p>
 <ul class="simple">
@@ -676,6 +644,7 @@ Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</spa
 <li><p>Differentialgleichungen (DGL)</p></li>
 <li><p>Blockdiagramme</p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -710,20 +679,20 @@ Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</spa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dsvvrl1.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DSV Vorlesung 1</p>
+        <p class="prev-next-title">Digitale Signalverarbeitung</p>
       </div>
     </a>
     <a class="right-next"
-       href="03_Zeitdiskret.html"
+       href="03_Elementare_Signale.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Zeitdiskrete Signale</p>
+        <p class="prev-next-title">Was ist ein Elementarsignal?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -743,31 +712,29 @@ Dabei sind \)</span>M_x<span class="math notranslate nohighlight">\( und \)</spa
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Systeme &amp; Sensorik &amp; zeitdiskrete Signale</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">1. Systeme</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">1.1 Systembeschreibung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">1.2 Lineare vs. nicht-lineare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">Dynamische Systeme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">Gedächtnislose Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lernziele">Lernziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">1. Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">1.1 Systembeschreibung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-vs-nicht-lineare">1.2 Lineare vs. nicht-lineare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-vs-zeitvariante-systeme">1.3 Zeitinvariante vs. zeitvariante Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme-vs-gedachtnichslose-systeme">1.4 Dynamische Systeme vs. gedächtnichslose Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-systeme">Dynamische Systeme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gedachtnislose-systeme">Gedächtnislose Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">Kausale Systeme</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">Nichtkausale Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-vs-nichtkausale-systeme">1.4 Kausale vs. nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-systeme">Kausale Systeme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nichtkausale-systeme">Nichtkausale Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">Instabiles System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-vs-instabile-systeme">1.5 Stabile vs. Instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instabiles-system">Instabiles System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">1.6 LZI Systeme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">1.6 LZI Systeme</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>
