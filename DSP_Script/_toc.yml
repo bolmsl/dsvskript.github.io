@@ -1,31 +1,31 @@
 format: jb-book
 root: docs/index
 parts:
-- caption: Vorkurs
-  numbered: false
-  chapters:
-  - file: docs/01_Python
-  - file: docs/02_Pythons
-  - file: docs/01_Mathe
-  - file: docs/01_getting_started
-  - file: docs/01_python_by_example
-  - file: docs/01_Einführung_in_DSV_&_Python
-  
-  - file: docs/01_learn_more
-- caption: Einführung
-  numbered: false
-  chapters:
-  - file: docs/01_DSP_Lecture
-  - file: docs/01_Einfuehrung
-  - file: docs/02_Einfuehrung
-  - file: docs/einfuehrung_02_zusammenfassung
-  - file: docs/dsvvrl1
+# - caption: Vorkurs
+#   numbered: false
+#   chapters:
+#   - file: docs/01_Python
+#   - file: docs/02_Pythons
+#   - file: docs/01_Mathe
+#   - file: docs/01_getting_started
+#   - file: docs/01_python_by_example
+#   - file: docs/01_Einführung_in_DSV_&_Python
+#   - file: docs/01_learn_more
+# - caption: Einführung
+#   numbered: false
+#   chapters:
+#   - file: docs/01_DSP_Lecture
+#   - file: docs/01_Einfuehrung
+#   - file: docs/02_Einfuehrung
+#   - file: docs/einfuehrung_02_zusammenfassung
+#   - file: docs/dsvvrl1
+
 - caption: Zeitdiskrete Signale
   numbered: false
   chapters:
   - file: docs/VL2
-  - file: docs/03_Zeitdiskret
-  - file: docs/03_Systeme_Sensorik_Diskret
+  #- file: docs/03_Zeitdiskret
+  #- file: docs/03_Systeme_Sensorik_Diskret
 - caption: Elementare Signale
   numbered: false
   chapters:
