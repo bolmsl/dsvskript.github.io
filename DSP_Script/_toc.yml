@@ -23,6 +23,7 @@ parts:
 - caption: Zeitdiskrete Signale
   numbered: true
   chapters:
+  - file: docs/VL2
   - file: docs/03_Zeitdiskret
   - file: docs/03_Systeme_Sensorik_Diskret
 - caption: Elementare Signale

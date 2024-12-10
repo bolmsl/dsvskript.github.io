@@ -1,72 +1,67 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>16. Digitale Signalverarbeitung - Einführung &#8212; Digitale Signalverarbeitung</title>
+    <title>15. Digitale Signalverarbeitung - Einführung &#8212; Digitale Signalverarbeitung</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/einfuehrung_02_zusammenfassung';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18. DSV Vorlesung 1" href="dsvvrl1.html" />
-    <link rel="prev" title="15. Digitale Signal Verarbeitung: Einführung" href="02_Einfuehrung.html" />
+    <link rel="next" title="17. DSV Vorlesung 1" href="dsvvrl1.html" />
+    <link rel="prev" title="14. Digitale Signal Verarbeitung: Einführung" href="02_Einfuehrung.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -158,39 +156,52 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Mathe.html">1. Mathematische Vorbereitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">3. An Introductory Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">4. Signale und Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">1. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">2. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">3. Signale und Signalverarbeitung</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">7. Learn More</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">6. Learn More</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">8. Inhalt der Vorlesung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">7. Inhalt der Vorlesung:</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">14. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">15. Digitale Signal Verarbeitung: Einführung</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Digitale Signalverarbeitung - Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">13. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">14. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Digitale Signalverarbeitung - Einführung</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">18. DSV Vorlesung 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">17. DSV Vorlesung 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">19. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">18. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">19. Systeme</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">20. Was ist ein Elementarsignal?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">22. Was ist ein Elementarsignal?</a></li>
 
 
 
@@ -201,29 +212,31 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">34. Elementare Signale</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">32. Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">36. Filter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">33. stochastische Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">37. stochastische Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">34. 2. Sensorik und Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">38. 2. Sensorik und Zeitdiskrete Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">35. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">36. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">39. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_DSV_Teil_II.html">40. Digitale Signalverarbeitung - DFT Teil 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">37. FFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">38. Fourier - Transformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">41. FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">42. Fourier - Transformation</a></li>
 
 
 
@@ -243,7 +256,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">55. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">59. Digitale Signalverarbeitung</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="test.html">60. Test Heading</a></li>
 </ul>
 
     </div>
@@ -259,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -268,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -369,9 +386,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -392,49 +409,49 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">16. Digitale Signalverarbeitung - Einführung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">16.1. Was ist ein Signal?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-von-signalen">16.2. Eigenschaften von Signalen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontinuierliche-und-diskrete-signale">16.2.1. Kontinuierliche und diskrete Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodische-und-aperiodische-signale">16.2.2. Periodische und aperiodische Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">16.2.3. Deterministische und stochastische Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindimensionale-und-mehrdimensionale-signale">16.2.4. Eindimensionale und mehrdimensionale Signale</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">15. Digitale Signalverarbeitung - Einführung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">15.1. Was ist ein Signal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-von-signalen">15.2. Eigenschaften von Signalen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontinuierliche-und-diskrete-signale">15.2.1. Kontinuierliche und diskrete Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodische-und-aperiodische-signale">15.2.2. Periodische und aperiodische Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">15.2.3. Deterministische und stochastische Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindimensionale-und-mehrdimensionale-signale">15.2.4. Eindimensionale und mehrdimensionale Signale</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-signalverabeitung">16.3. Was ist Signalverabeitung?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-braucht-man-signalverabeitung">16.3.1. Wozu braucht man Signalverabeitung?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-der-signalverarbeitung">16.3.2. Methoden der Signalverarbeitung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-signalverabeitung">15.3. Was ist Signalverabeitung?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-braucht-man-signalverabeitung">15.3.1. Wozu braucht man Signalverabeitung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-der-signalverarbeitung">15.3.2. Methoden der Signalverarbeitung</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-digitale-signalverarbeitung">16.4. Was ist <em>digitale</em> Signalverarbeitung?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-analoge-signalverarbeitungskette">16.5. Grundlegende analoge Signalverarbeitungskette</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-digitale-signalverarbeitungskette">16.6. Grundlegende digitale Signalverarbeitungskette</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaten-der-digitalen-signalverarbeitung">16.7. Eigenschaten der digitalen Signalverarbeitung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realisierungsmoglichkeiten">16.8. Realisierungsmöglichkeiten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allzweck-rechner">16.8.1. Allzweck-Rechner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mikroprozessoren">16.8.2. Mikroprozessoren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp">16.8.3. DSP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spezialschaltung-asics-fpgas">16.8.4. Spezialschaltung (ASICs, FPGAs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-digitale-signalverarbeitung">15.4. Was ist <em>digitale</em> Signalverarbeitung?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-analoge-signalverarbeitungskette">15.5. Grundlegende analoge Signalverarbeitungskette</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-digitale-signalverarbeitungskette">15.6. Grundlegende digitale Signalverarbeitungskette</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaten-der-digitalen-signalverarbeitung">15.7. Eigenschaten der digitalen Signalverarbeitung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realisierungsmoglichkeiten">15.8. Realisierungsmöglichkeiten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allzweck-rechner">15.8.1. Allzweck-Rechner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mikroprozessoren">15.8.2. Mikroprozessoren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp">15.8.3. DSP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spezialschaltung-asics-fpgas">15.8.4. Spezialschaltung (ASICs, FPGAs)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">17. Systeme</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">17.1. Systembeschreibung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-und-nicht-lineare-systeme">17.2. Lineare und nicht-lineare Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-und-zeitvariante-systeme">17.3. Zeitinvariante und zeitvariante Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-und-gedachtnislose-systeme">17.4. Dynamische und gedächtnislose Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-und-nichtkausale-systeme">17.5. Kausale und nichtkausale Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausales-system">17.5.1. Kausales System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nicht-kausale-systeme">17.5.2. Nicht-kausale Systeme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">16. Systeme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">16.1. Systembeschreibung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-und-nicht-lineare-systeme">16.2. Lineare und nicht-lineare Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-und-zeitvariante-systeme">16.3. Zeitinvariante und zeitvariante Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-und-gedachtnislose-systeme">16.4. Dynamische und gedächtnislose Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-und-nichtkausale-systeme">16.5. Kausale und nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausales-system">16.5.1. Kausales System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nicht-kausale-systeme">16.5.2. Nicht-kausale Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-und-instabile-systeme">17.6. Stabile und instabile Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabiles-system">17.6.1. Stabiles System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instablies-system">17.6.2. Instablies System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-und-instabile-systeme">16.6. Stabile und instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabiles-system">16.6.1. Stabiles System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instablies-system">16.6.2. Instablies System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">17.7. LZI Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">16.7. LZI Systeme</a></li>
 </ul>
 </li>
 </ul>
@@ -447,12 +464,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="digitale-signalverarbeitung-einfuhrung">
-<h1><span class="section-number">16. </span>Digitale Signalverarbeitung - Einführung<a class="headerlink" href="#digitale-signalverarbeitung-einfuhrung" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Digitale Signalverarbeitung - Einführung<a class="headerlink" href="#digitale-signalverarbeitung-einfuhrung" title="Link to this heading">#</a></h1>
 <section id="was-ist-ein-signal">
-<h2><span class="section-number">16.1. </span>Was ist ein Signal?<a class="headerlink" href="#was-ist-ein-signal" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Was ist ein Signal?<a class="headerlink" href="#was-ist-ein-signal" title="Link to this heading">#</a></h2>
 <p>Ein Signal ist eine mathematische Funktion mit mindestens einer unabhängigen Variable (Zeit, Raum, etc.), die eine informationstragende physikalische Größe beschreibt. Bespiele für unabhängige Variablen wären:  Die Zeit im Bezug auf Elektrische Größen (Stromstärke oder Spannung) t: u(t), i(t) oder auch die Zeit (Wochen/Monate/Jahre) im Bezug auf den Kryptoindex, Aktienmarkt n: d(n). Mehrere unabhängige Variablen wären z.B.: Die Raumkoordinaten (x,y) im Bezug auf die Helligkeit oder Intensität eines Bildes x und y: I(x,y). Die Raumkoordinaten (x,y,z) und über die Zeit (t) im Bezug auf den Schalldruck t: p(x,y,z,t)</p>
 <figure class="align-default">
 <img alt="../_images/Bild3.png" src="../_images/Bild3.png" />
@@ -466,18 +483,18 @@ document.write(`
 </figure>
 </section>
 <section id="eigenschaften-von-signalen">
-<h2><span class="section-number">16.2. </span>Eigenschaften von Signalen<a class="headerlink" href="#eigenschaften-von-signalen" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>Eigenschaften von Signalen<a class="headerlink" href="#eigenschaften-von-signalen" title="Link to this heading">#</a></h2>
 <p>Signale können einige verschiedene Eigenschaften haben, welche in Folge aufgezählt werden.</p>
 <figure class="align-default">
 <img alt="../_images/Bild5.png" src="../_images/Bild5.png" />
 </figure>
 <section id="kontinuierliche-und-diskrete-signale">
-<h3><span class="section-number">16.2.1. </span>Kontinuierliche und diskrete Signale<a class="headerlink" href="#kontinuierliche-und-diskrete-signale" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.2.1. </span>Kontinuierliche und diskrete Signale<a class="headerlink" href="#kontinuierliche-und-diskrete-signale" title="Link to this heading">#</a></h3>
 <p>Signale können entweder kontinuierlich oder disrekt sein. Kontinuierliche Signale (analog) sind mit jedem beliebigen Wert der Eingangsvariable definiert, wohingegen diskrete Signale (digital)
 zu bestimmten Abständen eine endliche Anzahl von Quantisierungsstufen zugeordnet haben. Es wird meistens durch das Abtasten eines kontinuierlichen Signales erzeugt.</p>
 </section>
 <section id="periodische-und-aperiodische-signale">
-<h3><span class="section-number">16.2.2. </span>Periodische und aperiodische Signale<a class="headerlink" href="#periodische-und-aperiodische-signale" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.2.2. </span>Periodische und aperiodische Signale<a class="headerlink" href="#periodische-und-aperiodische-signale" title="Link to this heading">#</a></h3>
 <p>Perodische und aperiodische Signale unterscheiden sich darin, dass perodische Signale sich in einem festen Abstand wiederholen (perodisch), während aperiodische Signale dies nicht tun, also nicht periodisch sind. Ein Beispiel für Ersteres wäre die Sinusfunktion und für Letzteres die Funktion x^2.
 Bei periodeschen Signale ist ist die Frequenz auch ein wichtiger Wert. Sie wird aus dem Kehrwert von T, also f = 1/T errechnet.
 periodisch:</p>
@@ -490,7 +507,7 @@ periodisch:</p>
 </figure>
 </section>
 <section id="deterministische-und-stochastische-signale">
-<h3><span class="section-number">16.2.3. </span>Deterministische und stochastische Signale<a class="headerlink" href="#deterministische-und-stochastische-signale" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.2.3. </span>Deterministische und stochastische Signale<a class="headerlink" href="#deterministische-und-stochastische-signale" title="Link to this heading">#</a></h3>
 <p>Deterministische und stochastische Signale unterscheiden sich in ihrem Bezug auf Zufall. Deterministische Signale hängen nicht vom Zufall ab, sind also genau berechenbar. Sie sind beschrieben durch eine mathematische Funktion. Beispiele von so ein Signal wären Strom in Schaltung sowie die Sinusfunktion.
 Stochastische Signale hingegen hängen von Zufällen ab, sind nicht genau berechenbar. Sprache und Rauschen sind Beispiele für so ein Signal.
 Deterministisch:</p>
@@ -503,24 +520,24 @@ Deterministisch:</p>
 </figure>
 </section>
 <section id="eindimensionale-und-mehrdimensionale-signale">
-<h3><span class="section-number">16.2.4. </span>Eindimensionale und mehrdimensionale Signale<a class="headerlink" href="#eindimensionale-und-mehrdimensionale-signale" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.2.4. </span>Eindimensionale und mehrdimensionale Signale<a class="headerlink" href="#eindimensionale-und-mehrdimensionale-signale" title="Link to this heading">#</a></h3>
 <p>Der Unterschied von eindimensionalen und mehrdimensionalen Signalen, findet sich, in der Anzahl der Variablen des Signals. Eindimensionale Signale sind nur abhängig von einer Variabel, wie z.B. bei einem Audiosignal P(t). Mehrdimensionale Signale sind abhängig von mehreren Variablen, wie z.B. ein Bild I(x,y) oder ein Video I(x,y,t)</p>
 </section>
 </section>
 <section id="was-ist-signalverabeitung">
-<h2><span class="section-number">16.3. </span>Was ist Signalverabeitung?<a class="headerlink" href="#was-ist-signalverabeitung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.3. </span>Was ist Signalverabeitung?<a class="headerlink" href="#was-ist-signalverabeitung" title="Link to this heading">#</a></h2>
 <p>Bei der Singalverarbeitung geht es um die Auswertung, Analyse, Manipulation und Synthese von Signalen mit einem System</p>
 <section id="wozu-braucht-man-signalverabeitung">
-<h3><span class="section-number">16.3.1. </span>Wozu braucht man Signalverabeitung?<a class="headerlink" href="#wozu-braucht-man-signalverabeitung" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.3.1. </span>Wozu braucht man Signalverabeitung?<a class="headerlink" href="#wozu-braucht-man-signalverabeitung" title="Link to this heading">#</a></h3>
 <p>Signalverabeitung wird benötigt für die Speicherung und Rekonstruktion von Signale, die Kompression von Signalen, das Trennen von Informationen und Rauschen, sowie Merkmalextraktion für Klassifikation.</p>
 </section>
 <section id="methoden-der-signalverarbeitung">
-<h3><span class="section-number">16.3.2. </span>Methoden der Signalverarbeitung<a class="headerlink" href="#methoden-der-signalverarbeitung" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.3.2. </span>Methoden der Signalverarbeitung<a class="headerlink" href="#methoden-der-signalverarbeitung" title="Link to this heading">#</a></h3>
 <p>Einige Methoden welche für die Signalverarbeitung benutzt werden sind unteranderem Filtern, Transformation (z.B Fourier Transformation), Interpolation, Prädiktion und Korrelation</p>
 </section>
 </section>
 <section id="was-ist-digitale-signalverarbeitung">
-<h2><span class="section-number">16.4. </span>Was ist <em>digitale</em> Signalverarbeitung?<a class="headerlink" href="#was-ist-digitale-signalverarbeitung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.4. </span>Was ist <em>digitale</em> Signalverarbeitung?<a class="headerlink" href="#was-ist-digitale-signalverarbeitung" title="Link to this heading">#</a></h2>
 <p>Die digitale Signalverarbeitung verarbeitet Signale mit <em>digitalen</em> Systemen. Diese Systeme bestehen aus Software und Hardware: Software zur Realisierung von Signalverarbeitungsverfahren und Hardware, wo die Signalverarbeitung realisiert wird.</p>
 <p>Erklärung der Komponenten:</p>
 <p>physikalische Größe             analoge Komponenten                   digitale Komponenten</p>
@@ -528,50 +545,50 @@ Deterministisch:</p>
 <p>Technischer Prozess &lt;- Aktor &lt;- Verstärker &lt;- Tiefpass &amp; Glättung &lt;- D/A Wandler &lt;- Digitaler Signalprozess</p>
 </section>
 <section id="grundlegende-analoge-signalverarbeitungskette">
-<h2><span class="section-number">16.5. </span>Grundlegende analoge Signalverarbeitungskette<a class="headerlink" href="#grundlegende-analoge-signalverarbeitungskette" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.5. </span>Grundlegende analoge Signalverarbeitungskette<a class="headerlink" href="#grundlegende-analoge-signalverarbeitungskette" title="Link to this heading">#</a></h2>
 <p>Ein analoges Eingangssignal wird mit einer analogen Schaltung zu einem analogen Ausgangssignal umgewandelt. Die analoge Schaltung benutzt Verstärker, Widerstände, Kondensatoren, etc. Ein Beispiel ist die Rauschunterdrückung durch einen analogen Tiefpass-Filter.</p>
 <figure class="align-default">
 <img alt="../_images/Bild10.png" src="../_images/Bild10.png" />
 </figure>
 </section>
 <section id="grundlegende-digitale-signalverarbeitungskette">
-<h2><span class="section-number">16.6. </span>Grundlegende digitale Signalverarbeitungskette<a class="headerlink" href="#grundlegende-digitale-signalverarbeitungskette" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.6. </span>Grundlegende digitale Signalverarbeitungskette<a class="headerlink" href="#grundlegende-digitale-signalverarbeitungskette" title="Link to this heading">#</a></h2>
 <p>Ein analoges Eingangssignal wird mit einem A/D Wandler zu einem digitalen Signal umgewandelt. Dieses digitale Signal wird dann durch einen digitalen Signalprozess umgewandelt. Nach der Bearbeitung wird das digitale Signal mit einem D/A Wandler wieder in ein analoges Ausgangssignal umgewandelt.</p>
 <figure class="align-default">
 <img alt="../_images/Bild11.png" src="../_images/Bild11.png" />
 </figure>
 </section>
 <section id="eigenschaten-der-digitalen-signalverarbeitung">
-<h2><span class="section-number">16.7. </span>Eigenschaten der digitalen Signalverarbeitung<a class="headerlink" href="#eigenschaten-der-digitalen-signalverarbeitung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.7. </span>Eigenschaten der digitalen Signalverarbeitung<a class="headerlink" href="#eigenschaten-der-digitalen-signalverarbeitung" title="Link to this heading">#</a></h2>
 <p>Digitale Signalverarbeitung hat auch seine Vor- und Nachteile:
 Die Vorteile sind Reproduzierbarkeit, hohe Zuverlässigkeit, hohe Genauigkeit bei großer Wortbreite, Langzeit- und Temperaturstabilität, geringe Störempfindlichkeit, sowie der Wegfall von Abgleichmaßnahmen.
 Die Nachteile sind zusätzlicher Schaltungsaufwand (A/D- und D/A-Wandler), ein tiefer Frequenzbereich (Tiefpass am Eingang), die Verursachung von Störungen. Quantisierungsrauschen, sowie “Neue” Programmierung und Theorien. Bsp: Schulungskosten für alte Mitarbeiter.</p>
 </section>
 <section id="realisierungsmoglichkeiten">
-<h2><span class="section-number">16.8. </span>Realisierungsmöglichkeiten<a class="headerlink" href="#realisierungsmoglichkeiten" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.8. </span>Realisierungsmöglichkeiten<a class="headerlink" href="#realisierungsmoglichkeiten" title="Link to this heading">#</a></h2>
 <p>Es gibt einige verschiede Realisierungsmöglichkeiten für die digitale Signalverarbeitung, jede mit ihren eigenen Vor- und Nachteilen.</p>
 <section id="allzweck-rechner">
-<h3><span class="section-number">16.8.1. </span>Allzweck-Rechner<a class="headerlink" href="#allzweck-rechner" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.8.1. </span>Allzweck-Rechner<a class="headerlink" href="#allzweck-rechner" title="Link to this heading">#</a></h3>
 <p>Ein Allzweck-Rechner ist sehr flexibel, schnell einsetzbar, hat eine hohe Leistungsaufnahme und hat die Nähe zwischen Entwicklungsumgebung und Betriebsumgebung. Jedoch kann er teuer sein.</p>
 </section>
 <section id="mikroprozessoren">
-<h3><span class="section-number">16.8.2. </span>Mikroprozessoren<a class="headerlink" href="#mikroprozessoren" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.8.2. </span>Mikroprozessoren<a class="headerlink" href="#mikroprozessoren" title="Link to this heading">#</a></h3>
 <p>Mikroprozessoren sind günstig, haben mittlere Flexibilität, mittlere Geschwindigkeit und einen geringer Entwicklungsaufwand.</p>
 </section>
 <section id="dsp">
-<h3><span class="section-number">16.8.3. </span>DSP<a class="headerlink" href="#dsp" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.8.3. </span>DSP<a class="headerlink" href="#dsp" title="Link to this heading">#</a></h3>
 <p>DSP haben eine höhere Geschwindigkeit und eine optimierte Architektur für Signalverarbeitung. Sie haben jedoch weniger Flexibilität und einen höheren Entwicklungsaufwand.</p>
 </section>
 <section id="spezialschaltung-asics-fpgas">
-<h3><span class="section-number">16.8.4. </span>Spezialschaltung (ASICs, FPGAs)<a class="headerlink" href="#spezialschaltung-asics-fpgas" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">15.8.4. </span>Spezialschaltung (ASICs, FPGAs)<a class="headerlink" href="#spezialschaltung-asics-fpgas" title="Link to this heading">#</a></h3>
 <p>Spezialschaltungen habe eine hohe Geschwindigkeit, hohe Parallelisierbarkeit, jedoch auch hohe Entwicklungskosten und Entwicklungsdauer.</p>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="systeme">
-<h1><span class="section-number">17. </span>Systeme<a class="headerlink" href="#systeme" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">16. </span>Systeme<a class="headerlink" href="#systeme" title="Link to this heading">#</a></h1>
 <section id="systembeschreibung">
-<h2><span class="section-number">17.1. </span>Systembeschreibung<a class="headerlink" href="#systembeschreibung" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>Systembeschreibung<a class="headerlink" href="#systembeschreibung" title="Link to this heading">#</a></h2>
 <p>Ein System (H) wird druch Eingabe-Ausgabe-Verhalten als Black Box oder White Box beschrieben.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Bei einer Black Box weiß man nicht was in der Funktion passiert,
  sondern nur was rauskommt.
@@ -589,7 +606,7 @@ passiert und auch was rauskommt.
 </figure>
 </section>
 <section id="lineare-und-nicht-lineare-systeme">
-<h2><span class="section-number">17.2. </span>Lineare und nicht-lineare Systeme<a class="headerlink" href="#lineare-und-nicht-lineare-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.2. </span>Lineare und nicht-lineare Systeme<a class="headerlink" href="#lineare-und-nicht-lineare-systeme" title="Link to this heading">#</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Lineare Systeme sind Systeme, welche definiert sind 
 durch die Gültigkeit der Superposition.
 Nicht lineare Systeme sind hingegen, wie der Name schon verrät,
@@ -603,7 +620,7 @@ nicht linear.
 </figure>
 </section>
 <section id="zeitinvariante-und-zeitvariante-systeme">
-<h2><span class="section-number">17.3. </span>Zeitinvariante und zeitvariante Systeme<a class="headerlink" href="#zeitinvariante-und-zeitvariante-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.3. </span>Zeitinvariante und zeitvariante Systeme<a class="headerlink" href="#zeitinvariante-und-zeitvariante-systeme" title="Link to this heading">#</a></h2>
 <p>Systeme sind <em>zeitinvariant</em> wenn eine Zeitverschiebung am Eingang zur gleichen Zeitverschiebung am Ausgang führt.</p>
 <p>Systeme sind <em>zeitvariant</em> wenn Sie nicht <em>zeitinvariant</em> sind.</p>
 <p>Zeitinvariant:</p>
@@ -612,7 +629,7 @@ nicht linear.
 </figure>
 </section>
 <section id="dynamische-und-gedachtnislose-systeme">
-<h2><span class="section-number">17.4. </span>Dynamische und gedächtnislose Systeme<a class="headerlink" href="#dynamische-und-gedachtnislose-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.4. </span>Dynamische und gedächtnislose Systeme<a class="headerlink" href="#dynamische-und-gedachtnislose-systeme" title="Link to this heading">#</a></h2>
 <p><strong>Dynamische Systeme</strong> sind nicht nur von dem Eingangssignal zum Zeitpunkt t = t0 abhängig, sondern auch von t != t0 abhängig.</p>
 <p>Bsp:
 y(t) = x(t-1)</p>
@@ -621,16 +638,16 @@ y(t) = x(t-1)</p>
 y(t) = x^2(t)</p>
 </section>
 <section id="kausale-und-nichtkausale-systeme">
-<h2><span class="section-number">17.5. </span>Kausale und nichtkausale Systeme<a class="headerlink" href="#kausale-und-nichtkausale-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.5. </span>Kausale und nichtkausale Systeme<a class="headerlink" href="#kausale-und-nichtkausale-systeme" title="Link to this heading">#</a></h2>
 <section id="kausales-system">
-<h3><span class="section-number">17.5.1. </span>Kausales System<a class="headerlink" href="#kausales-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.5.1. </span>Kausales System<a class="headerlink" href="#kausales-system" title="Link to this heading">#</a></h3>
 <p>Wenn ein Ausgangssignal y(t0) nur vom Eingangssignal x(t), t&lt;=t0 abhängt, wird ein System H als <strong>kausal</strong> bezeichnet.
 Das Ausgangssignal hängt also nur vom aktuellen und vergangengen Eingangssignalen ab.</p>
 <p>Bsp:
 y[n] = x[n-1]</p>
 </section>
 <section id="nicht-kausale-systeme">
-<h3><span class="section-number">17.5.2. </span>Nicht-kausale Systeme<a class="headerlink" href="#nicht-kausale-systeme" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.5.2. </span>Nicht-kausale Systeme<a class="headerlink" href="#nicht-kausale-systeme" title="Link to this heading">#</a></h3>
 <p>Wenn ein System H nicht kausal ist, wird es als nicht-kausal bezeichnet!
 Ist in der realen Welt nicht möglich</p>
 <p>Bsp:
@@ -638,20 +655,20 @@ y[n] = x[n+1]</p>
 </section>
 </section>
 <section id="stabile-und-instabile-systeme">
-<h2><span class="section-number">17.6. </span>Stabile und instabile Systeme<a class="headerlink" href="#stabile-und-instabile-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.6. </span>Stabile und instabile Systeme<a class="headerlink" href="#stabile-und-instabile-systeme" title="Link to this heading">#</a></h2>
 <section id="stabiles-system">
-<h3><span class="section-number">17.6.1. </span>Stabiles System<a class="headerlink" href="#stabiles-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.6.1. </span>Stabiles System<a class="headerlink" href="#stabiles-system" title="Link to this heading">#</a></h3>
 <p>Wenn ein <strong>beschränktes Eingangssignal</strong> zu einem <strong>beschränkten Ausgangssignal</strong> führt, wird eine System H als stabil bezeichnet. Das Singal ist in seinen Werten im Minimum und Maximum begrenzt (<strong>beschränkt</strong>).
 BIBO (Bounded Input, Bounded Output)</p>
 </section>
 <section id="instablies-system">
-<h3><span class="section-number">17.6.2. </span>Instablies System<a class="headerlink" href="#instablies-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.6.2. </span>Instablies System<a class="headerlink" href="#instablies-system" title="Link to this heading">#</a></h3>
 <p>Wenn ein <strong>beschränktes Eingangssignal</strong> <em>nicht</em> zu einem <strong>beschränkten Ausgangssignal</strong> führt, wird es als instabiles System bezeichnet.</p>
 <p>Bsp: Ball rollt von einem Berg runter</p>
 </section>
 </section>
 <section id="lzi-systeme">
-<h2><span class="section-number">17.7. </span>LZI Systeme<a class="headerlink" href="#lzi-systeme" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.7. </span>LZI Systeme<a class="headerlink" href="#lzi-systeme" title="Link to this heading">#</a></h2>
 <p>LZI Systeme bedeutet lineare zeitinvariante Systeme.</p>
 <p>x(t) -&gt; H -&gt; y(t)</p>
 <p>LZI System können durch, Impulsantwort, Übertragungsfunktion, DGL (Differenzialgleichung) und Blockdiagramme beschrieben werden.</p>
@@ -688,7 +705,7 @@ BIBO (Bounded Input, Bounded Output)</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -697,7 +714,7 @@ BIBO (Bounded Input, Bounded Output)</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Digitale Signal Verarbeitung: Einführung</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Digitale Signal Verarbeitung: Einführung</p>
       </div>
     </a>
     <a class="right-next"
@@ -705,7 +722,7 @@ BIBO (Bounded Input, Bounded Output)</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>DSV Vorlesung 1</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>DSV Vorlesung 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -718,55 +735,56 @@ BIBO (Bounded Input, Bounded Output)</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">16. Digitale Signalverarbeitung - Einführung</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">16.1. Was ist ein Signal?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-von-signalen">16.2. Eigenschaften von Signalen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontinuierliche-und-diskrete-signale">16.2.1. Kontinuierliche und diskrete Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodische-und-aperiodische-signale">16.2.2. Periodische und aperiodische Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">16.2.3. Deterministische und stochastische Signale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindimensionale-und-mehrdimensionale-signale">16.2.4. Eindimensionale und mehrdimensionale Signale</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">15. Digitale Signalverarbeitung - Einführung</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-ein-signal">15.1. Was ist ein Signal?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-von-signalen">15.2. Eigenschaften von Signalen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontinuierliche-und-diskrete-signale">15.2.1. Kontinuierliche und diskrete Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodische-und-aperiodische-signale">15.2.2. Periodische und aperiodische Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministische-und-stochastische-signale">15.2.3. Deterministische und stochastische Signale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eindimensionale-und-mehrdimensionale-signale">15.2.4. Eindimensionale und mehrdimensionale Signale</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-signalverabeitung">16.3. Was ist Signalverabeitung?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-braucht-man-signalverabeitung">16.3.1. Wozu braucht man Signalverabeitung?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-der-signalverarbeitung">16.3.2. Methoden der Signalverarbeitung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-signalverabeitung">15.3. Was ist Signalverabeitung?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wozu-braucht-man-signalverabeitung">15.3.1. Wozu braucht man Signalverabeitung?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methoden-der-signalverarbeitung">15.3.2. Methoden der Signalverarbeitung</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-digitale-signalverarbeitung">16.4. Was ist <em>digitale</em> Signalverarbeitung?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-analoge-signalverarbeitungskette">16.5. Grundlegende analoge Signalverarbeitungskette</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-digitale-signalverarbeitungskette">16.6. Grundlegende digitale Signalverarbeitungskette</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaten-der-digitalen-signalverarbeitung">16.7. Eigenschaten der digitalen Signalverarbeitung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realisierungsmoglichkeiten">16.8. Realisierungsmöglichkeiten</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allzweck-rechner">16.8.1. Allzweck-Rechner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mikroprozessoren">16.8.2. Mikroprozessoren</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp">16.8.3. DSP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spezialschaltung-asics-fpgas">16.8.4. Spezialschaltung (ASICs, FPGAs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-ist-digitale-signalverarbeitung">15.4. Was ist <em>digitale</em> Signalverarbeitung?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-analoge-signalverarbeitungskette">15.5. Grundlegende analoge Signalverarbeitungskette</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grundlegende-digitale-signalverarbeitungskette">15.6. Grundlegende digitale Signalverarbeitungskette</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaten-der-digitalen-signalverarbeitung">15.7. Eigenschaten der digitalen Signalverarbeitung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realisierungsmoglichkeiten">15.8. Realisierungsmöglichkeiten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allzweck-rechner">15.8.1. Allzweck-Rechner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mikroprozessoren">15.8.2. Mikroprozessoren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dsp">15.8.3. DSP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spezialschaltung-asics-fpgas">15.8.4. Spezialschaltung (ASICs, FPGAs)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">17. Systeme</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">17.1. Systembeschreibung</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-und-nicht-lineare-systeme">17.2. Lineare und nicht-lineare Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-und-zeitvariante-systeme">17.3. Zeitinvariante und zeitvariante Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-und-gedachtnislose-systeme">17.4. Dynamische und gedächtnislose Systeme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-und-nichtkausale-systeme">17.5. Kausale und nichtkausale Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausales-system">17.5.1. Kausales System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nicht-kausale-systeme">17.5.2. Nicht-kausale Systeme</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#systeme">16. Systeme</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systembeschreibung">16.1. Systembeschreibung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lineare-und-nicht-lineare-systeme">16.2. Lineare und nicht-lineare Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeitinvariante-und-zeitvariante-systeme">16.3. Zeitinvariante und zeitvariante Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamische-und-gedachtnislose-systeme">16.4. Dynamische und gedächtnislose Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kausale-und-nichtkausale-systeme">16.5. Kausale und nichtkausale Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kausales-system">16.5.1. Kausales System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nicht-kausale-systeme">16.5.2. Nicht-kausale Systeme</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-und-instabile-systeme">17.6. Stabile und instabile Systeme</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabiles-system">17.6.1. Stabiles System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instablies-system">17.6.2. Instablies System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabile-und-instabile-systeme">16.6. Stabile und instabile Systeme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabiles-system">16.6.1. Stabiles System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instablies-system">16.6.2. Instablies System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">17.7. LZI Systeme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lzi-systeme">16.7. LZI Systeme</a></li>
 </ul>
 </li>
 </ul>
@@ -818,8 +836,8 @@ By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

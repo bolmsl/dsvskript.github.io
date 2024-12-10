@@ -1,74 +1,69 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>41. Digitale Signalverarbeitung - DFT Teil 2 &#8212; Digitale Signalverarbeitung</title>
+    <title>40. Digitale Signalverarbeitung - DFT Teil 2 &#8212; Digitale Signalverarbeitung</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/06_DSV_Teil_II';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="42. FFT" href="08_FFT.html" />
-    <link rel="prev" title="40. Digitale Signalverarbeitung" href="06_Spektrogramm.html" />
+    <link rel="next" title="41. FFT" href="08_FFT.html" />
+    <link rel="prev" title="39. Digitale Signalverarbeitung" href="06_Spektrogramm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -160,42 +158,52 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vorkurs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Mathe.html">1. Mathematische Vorbereitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">2. Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">3. An Introductory Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">4. Signale und Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_getting_started.html">1. Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_python_by_example.html">2. An Introductory Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einf%C3%BChrung_in_DSV_%26_Python.html">3. Signale und Signalverarbeitung</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">7. Learn More</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_learn_more.html">6. Learn More</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Einführung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">8. Inhalt der Vorlesung:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_DSP_Lecture.html">7. Inhalt der Vorlesung:</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">14. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">15. Digitale Signal Verarbeitung: Einführung</a></li>
-<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">16. Digitale Signalverarbeitung - Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_Einfuehrung.html">13. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Einfuehrung.html">14. Digitale Signal Verarbeitung: Einführung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="einfuehrung_02_zusammenfassung.html">15. Digitale Signalverarbeitung - Einführung</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">18. DSV Vorlesung 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsvvrl1.html">17. DSV Vorlesung 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Zeitdiskrete Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">19. Zeitdiskrete Signale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">20. Systeme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Zeitdiskret.html">18. Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Systeme_Sensorik_Diskret.html">19. Systeme</a></li>
 
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Elementare Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">23. Was ist ein Elementarsignal?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Elementare_Signale.html">22. Was ist ein Elementarsignal?</a></li>
 
 
 
@@ -207,30 +215,30 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Elementare%20Signale.html">35. Elementare Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ElementareSignale.html">34. Elementare Signale</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Filter</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">37. Filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Filter.html">36. Filter</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Stochastische Signale</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">38. stochastische Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Stochastisch.html">37. stochastische Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sensorik</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">39. 2. Sensorik und Zeitdiskrete Signale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_Sensorik.html">38. 2. Sensorik und Zeitdiskrete Signale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spektrogramm</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">40. Digitale Signalverarbeitung</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">41. Digitale Signalverarbeitung - DFT Teil 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Spektrogramm.html">39. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">40. Digitale Signalverarbeitung - DFT Teil 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">FFT</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">42. FFT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">43. Fourier - Transformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_FFT.html">41. FFT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fouriertransformation.html">42. Fourier - Transformation</a></li>
 
 
 
@@ -250,7 +258,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning für Signalverarbeitung</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">60. Digitale Signalverarbeitung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_DL4SV.html">59. Digitale Signalverarbeitung</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="test.html">60. Test Heading</a></li>
 </ul>
 
     </div>
@@ -266,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -275,14 +287,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -376,9 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -399,16 +411,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskrete-fourier-transformation">41.1. Diskrete Fourier-Transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herleitung-der-dft-gleichung">41.1.1. Herleitung der DFT-Gleichung</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementierung-der-dft">41.1.2. Implementierung der DFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskrete-fourier-transformation">40.1. Diskrete Fourier-Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herleitung-der-dft-gleichung">40.1.1. Herleitung der DFT-Gleichung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementierung-der-dft">40.1.2. Implementierung der DFT</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-der-dft">41.2. Eigenschaften der DFT</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearitat">41.2.1. Linearität</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodizitat">41.2.2. Periodizität</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parceval-theorem">41.2.3. Parceval-Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrie">41.2.4. Symmetrie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-der-dft">40.2. Eigenschaften der DFT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearitat">40.2.1. Linearität</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodizitat">40.2.2. Periodizität</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parceval-theorem">40.2.3. Parceval-Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrie">40.2.4. Symmetrie</a></li>
 </ul>
 </li>
 </ul>
@@ -420,14 +432,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="digitale-signalverarbeitung-dft-teil-2">
-<h1><span class="section-number">41. </span>Digitale Signalverarbeitung - DFT Teil 2<a class="headerlink" href="#digitale-signalverarbeitung-dft-teil-2" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">40. </span>Digitale Signalverarbeitung - DFT Teil 2<a class="headerlink" href="#digitale-signalverarbeitung-dft-teil-2" title="Link to this heading">#</a></h1>
 <section id="diskrete-fourier-transformation">
-<h2><span class="section-number">41.1. </span>Diskrete Fourier-Transformation<a class="headerlink" href="#diskrete-fourier-transformation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">40.1. </span>Diskrete Fourier-Transformation<a class="headerlink" href="#diskrete-fourier-transformation" title="Link to this heading">#</a></h2>
 <section id="herleitung-der-dft-gleichung">
-<h3><span class="section-number">41.1.1. </span>Herleitung der DFT-Gleichung<a class="headerlink" href="#herleitung-der-dft-gleichung" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.1.1. </span>Herleitung der DFT-Gleichung<a class="headerlink" href="#herleitung-der-dft-gleichung" title="Link to this heading">#</a></h3>
 <p>Am Anfang haben wir die Fourier-Transformation. Die Fourier-Transformation Ist Zeit und Frequenz kontinuierlich,</p>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\ X(f) = \int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt\)</span><br></p>
@@ -454,7 +466,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="implementierung-der-dft">
-<h3><span class="section-number">41.1.2. </span>Implementierung der DFT<a class="headerlink" href="#implementierung-der-dft" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.1.2. </span>Implementierung der DFT<a class="headerlink" href="#implementierung-der-dft" title="Link to this heading">#</a></h3>
 <p>Bei der Implementierung der DFT wird ein Teil, der DFT Gleichung Mit dem Drehfaktor ersetzt.
 Der Drehfaktor lautet:</p>
 <blockquote>
@@ -481,16 +493,16 @@ Der Drehfaktor lautet:</p>
 </section>
 </section>
 <section id="eigenschaften-der-dft">
-<h2><span class="section-number">41.2. </span>Eigenschaften der DFT<a class="headerlink" href="#eigenschaften-der-dft" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">40.2. </span>Eigenschaften der DFT<a class="headerlink" href="#eigenschaften-der-dft" title="Link to this heading">#</a></h2>
 <section id="linearitat">
-<h3><span class="section-number">41.2.1. </span>Linearität<a class="headerlink" href="#linearitat" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.2.1. </span>Linearität<a class="headerlink" href="#linearitat" title="Link to this heading">#</a></h3>
 <p>Die Multiplikation mit k und Addition kann man auch vor der Diskretisierung oder nach der Diskretisierung ausrechnen:</p>
 <blockquote>
 <div><p>DFT{a ⋅ x(k) + b ⋅ y(k)} = a ⋅ DFT{x(k)} + b ⋅ DFT{y(k)}</p>
 </div></blockquote>
 </section>
 <section id="periodizitat">
-<h3><span class="section-number">41.2.2. </span>Periodizität<a class="headerlink" href="#periodizitat" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.2.2. </span>Periodizität<a class="headerlink" href="#periodizitat" title="Link to this heading">#</a></h3>
 <p>Das Ergebnis ändert sich nicht, obwohl man eine Periode, vor der Diskretisierung, weiter schaut:</p>
 <blockquote>
 <div><p>x[n] = x[n + N]<br>
@@ -498,14 +510,14 @@ x[k] = x[k + N]</p>
 </div></blockquote>
 </section>
 <section id="parceval-theorem">
-<h3><span class="section-number">41.2.3. </span>Parceval-Theorem<a class="headerlink" href="#parceval-theorem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.2.3. </span>Parceval-Theorem<a class="headerlink" href="#parceval-theorem" title="Link to this heading">#</a></h3>
 <p>Die Energie der Fourier-Transformation, welche zeitlich diskretisiert ist, die gleiche Energie ist, wie der der DFT multipliziert mit 1/N:</p>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\ \sum_{n=0}^{N-1}[X(n)]^2 = \frac{1}{N} \sum_{n=0}^{N-1}[x(k)]^2 \)</span></p>
 </div></blockquote>
 </section>
 <section id="symmetrie">
-<h3><span class="section-number">41.2.4. </span>Symmetrie<a class="headerlink" href="#symmetrie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">40.2.4. </span>Symmetrie<a class="headerlink" href="#symmetrie" title="Link to this heading">#</a></h3>
 <p>Die Symmetrie sagt raus, das alle geraden Datenpunkte, der DFT, konjugiert und nicht konjugiert das selber ergeben, sowie alle ungeraden Datenpunkte, der DFT:</p>
 <blockquote>
 <div><p><span class="math notranslate nohighlight">\(\ X[\frac{N}{2}+l] = X[\frac{N}{2}-l]\)</span><br>
@@ -545,7 +557,7 @@ x[k] = x[k + N]</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -554,7 +566,7 @@ x[k] = x[k + N]</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">40. </span>Digitale Signalverarbeitung</p>
+        <p class="prev-next-title"><span class="section-number">39. </span>Digitale Signalverarbeitung</p>
       </div>
     </a>
     <a class="right-next"
@@ -562,7 +574,7 @@ x[k] = x[k + N]</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">42. </span>FFT</p>
+        <p class="prev-next-title"><span class="section-number">41. </span>FFT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -575,22 +587,23 @@ x[k] = x[k + N]</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskrete-fourier-transformation">41.1. Diskrete Fourier-Transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herleitung-der-dft-gleichung">41.1.1. Herleitung der DFT-Gleichung</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementierung-der-dft">41.1.2. Implementierung der DFT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskrete-fourier-transformation">40.1. Diskrete Fourier-Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herleitung-der-dft-gleichung">40.1.1. Herleitung der DFT-Gleichung</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementierung-der-dft">40.1.2. Implementierung der DFT</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-der-dft">41.2. Eigenschaften der DFT</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearitat">41.2.1. Linearität</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodizitat">41.2.2. Periodizität</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parceval-theorem">41.2.3. Parceval-Theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrie">41.2.4. Symmetrie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenschaften-der-dft">40.2. Eigenschaften der DFT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearitat">40.2.1. Linearität</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodizitat">40.2.2. Periodizität</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parceval-theorem">40.2.3. Parceval-Theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrie">40.2.4. Symmetrie</a></li>
 </ul>
 </li>
 </ul>
@@ -641,8 +654,8 @@ By Prof. Dr.-Ing. Seyed Eghbal Ghobadi and Prof. Dr.-Ing. Nina Rudigkeit
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
