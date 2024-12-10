@@ -1,3 +1,4 @@
+## Systeme & Sensorik & zeitdiskrete Signale
 ## Lernziele
 
 >In diesem Kapitel wollen wir uns unterschiedliche Eigenschaften von Systemen anschauen und den Unterschied zwischen aktiven und passiven Sensoren lernen. Außerdem werden wir die Grundlagen der Umwandlung eines analogen zu einem digitalen Signal anschauen. Dies beinhaltet die Abtastung, und Quantisierung. Zu guter letzt wird das Problem von Aliasing behandelt.
@@ -27,7 +28,8 @@ Vorteile:
 - Erhöhte Genauigkeit: Das System kann genau simuliert und optimiert werden.
 - Verständlichkeit: Die internen Mechanismen und ihre Auswirkungen werden transparent.
 
-![image.png](da1213e6-aa45-4884-96ca-96c5980c8de6.png)
+```{figure} /_static/lecture_specific/vl2/1.png
+```
 
 ### 1.2 Lineare vs. nicht-lineare 
 
@@ -55,7 +57,8 @@ Beispiel:
 
 Ein elektrisches Netzwerk aus Widerständen und Kondensatoren ist bei linearem Verhalten (ohne Sättigung oder nicht-lineare Elemente wie Dioden) ein lineares System
 
-![image.png](ade8745f-280f-482e-9d7f-9c5ca7ca836b.png)
+```{figure} /_static/lecture_specific/vl2/2.png
+```
 
 ### 1.3 Zeitinvariante vs. zeitvariante Systeme
 
@@ -78,7 +81,8 @@ Eigenschaften:
 Beispiel: 
 - Ein RC-Tiefpassfilter ist zeitinvariant, da sich das Übertragungsverhalten nicht ändert, wenn das Eingangssignal zeitlich verschoben wird.
 
-![image.png](48efb1cf-cae4-4339-99b8-13501b04b1c8.png)
+```{figure} /_static/lecture_specific/vl2/3.png
+```
 
 ### 1.4 Dynamische Systeme vs. gedächtnichslose Systeme
 
